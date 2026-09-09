@@ -1,0 +1,284 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 6px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-gold: var(--gold);
+  --color-gold-muted: var(--gold-muted);
+  --color-wood: var(--wood);
+  --color-forest: var(--forest);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --font-display: "Cinzel", "Fraunces", Georgia, serif;
+  --font-serif: "Playfair Display", "Fraunces", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", "Karla", system-ui, -apple-system, sans-serif;
+}
+
+:root {
+  --radius: 0.5rem;
+
+  /* Luxury Dark Palette: Deep charcoal & obsidian backdrop */
+  --background: #0b0c0f;
+  --foreground: #f4eee2;
+
+  /* Cards with subtle warmth and depth */
+  --card: #13151b;
+  --card-foreground: #f4eee2;
+
+  /* Primary: Warm golden amber */
+  --primary: #c99352;
+  --primary-foreground: #0b0c0f;
+
+  /* Secondary: Deep warm bronze */
+  --secondary: #222631;
+  --secondary-foreground: #e8ded1;
+
+  /* Muted tones */
+  --muted: #181b23;
+  --muted-foreground: #9ea5b3;
+
+  /* Accent: Rich luminous gold */
+  --accent: #d8a85e;
+  --accent-foreground: #0b0c0f;
+
+  /* Custom luxury tokens */
+  --gold: #e5b869;
+  --gold-muted: rgba(229, 184, 105, 0.15);
+  --wood: #a66a38;
+  --forest: #1f3d2f;
+
+  /* Borders & inputs with subtle warm gold tint */
+  --border: rgba(229, 184, 105, 0.14);
+  --input: rgba(229, 184, 105, 0.18);
+  --ring: #c99352;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+    background-color: var(--background);
+    color: var(--foreground);
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+  }
+
+  ::selection {
+    background: #c99352;
+    color: #0b0c0f;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+}
+
+/* Luxury Typography & Badge Utilities */
+@utility eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+@utility gold-gradient-text {
+  background: linear-gradient(135deg, #f5d799 0%, #c99352 50%, #e8b96e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@utility gold-border-glow {
+  box-shadow: 0 0 25px -5px rgba(216, 168, 94, 0.22);
+}
+
+@utility glass-panel {
+  background: rgba(19, 21, 27, 0.72);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(229, 184, 105, 0.16);
+}
+
+@utility glass-dark {
+  background: rgba(11, 12, 15, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(229, 184, 105, 0.12);
+}
+
+/* 3D Depth Utilities */
+.perspective-800 {
+  perspective: 800px;
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.perspective-1200 {
+  perspective: 1200px;
+}
+
+.perspective-1400 {
+  perspective: 1400px;
+}
+
+.perspective-1600 {
+  perspective: 1600px;
+}
+
+.transform-style-3d,
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.card-3d {
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s ease;
+  will-change: transform;
+}
+
+.card-3d:hover {
+  transform: translateY(-6px) rotateX(3deg) rotateY(-2deg) scale(1.01);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7), 0 0 30px -5px rgba(201, 147, 82, 0.2);
+}
+
+/* Spatial Menu Transition Keyframes */
+@keyframes spatialForward {
+  0% {
+    opacity: 0;
+    transform: perspective(1000px) translateZ(-60px) scale(0.96);
+  }
+  60% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 1;
+    transform: perspective(1000px) translateZ(0px) scale(1);
+  }
+}
+
+.animate-spatial-forward {
+  animation: spatialForward 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* 3D Emblem Subtle Idle Float */
+@keyframes emblem3DFloat {
+  0%, 100% {
+    transform: translateZ(12px) rotateX(0deg) rotateY(0deg) translateY(0px);
+  }
+  25% {
+    transform: translateZ(18px) rotateX(1.8deg) rotateY(-2deg) translateY(-5px);
+  }
+  50% {
+    transform: translateZ(14px) rotateX(-1deg) rotateY(2.2deg) translateY(-8px);
+  }
+  75% {
+    transform: translateZ(20px) rotateX(-1.5deg) rotateY(-1.5deg) translateY(-3px);
+  }
+}
+
+.animate-emblem-float {
+  animation: emblem3DFloat 8s ease-in-out infinite;
+}
+
+/* Floating Animation */
+@keyframes floatGentle {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(0.8deg);
+  }
+}
+
+.animate-float {
+  animation: floatGentle 5s ease-in-out infinite;
+}
+
+/* Subtle particle pulse */
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.35;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.65;
+    transform: scale(1.08);
+  }
+}
+
+.animate-glow {
+  animation: pulseGlow 4s ease-in-out infinite;
+}
+
+/* Reveal transition */
+@utility reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  &.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+  }
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
