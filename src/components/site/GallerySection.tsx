@@ -78,31 +78,31 @@ export function GallerySection({ onOpenPhoto }: GallerySectionProps) {
   }, []);
 
   // Depth tiers for true multi-plane layout:
-  // 0: Recessed (-15px), 1: Midground (+12px), 2: Elevated Foreground (+36px)
+  // 0: Recessed (-10px), 1: Midground (+16px), 2: Elevated Foreground (+42px)
   const getDepthTier = (index: number): GalleryDepthTier => {
     const tier = index % 3;
     if (tier === 0) {
       return {
-        baseZ: 12,
+        baseZ: 14,
         hoverZ: 55,
         shadow: "shadow-[0_15px_35px_rgba(0,0,0,0.85)]",
-        border: "border-[#D6A84F]/18",
+        border: "border-[#B88952]/20",
         parallaxMultiplier: 1.0,
       };
     } else if (tier === 1) {
       return {
-        baseZ: 36,
-        hoverZ: 70,
-        shadow: "shadow-[0_25px_50px_rgba(0,0,0,0.92),0_0_30px_rgba(214,168,79,0.2)]",
-        border: "border-[#D6A84F]/35",
+        baseZ: 38,
+        hoverZ: 75,
+        shadow: "shadow-[0_25px_50px_rgba(0,0,0,0.92),0_0_30px_rgba(184,137,82,0.25)]",
+        border: "border-[#B88952]/40",
         parallaxMultiplier: 1.4,
       };
     } else {
       return {
-        baseZ: -10,
+        baseZ: -8,
         hoverZ: 45,
         shadow: "shadow-[0_10px_25px_rgba(0,0,0,0.75)]",
-        border: "border-[#D6A84F]/12",
+        border: "border-[#B88952]/15",
         parallaxMultiplier: 0.7,
       };
     }
@@ -112,34 +112,26 @@ export function GallerySection({ onOpenPhoto }: GallerySectionProps) {
     <section
       id="gallery"
       ref={galleryRef}
-      className="relative bg-background py-24 sm:py-32 overflow-hidden perspective-1400 preserve-3d"
+      className="relative py-24 sm:py-32 overflow-hidden perspective-1400 preserve-3d"
     >
-      {/* Warm volumetric background lighting */}
-      <div
-        aria-hidden="true"
-        className="absolute top-1/3 right-10 size-[500px] rounded-full bg-[#D6A84F]/5 blur-[160px] pointer-events-none -z-10"
-      />
-      <div
-        aria-hidden="true"
-        className="absolute bottom-1/4 left-10 size-[400px] rounded-full bg-[#18201C]/40 blur-[140px] pointer-events-none -z-10"
-      />
-
-      <div className="mx-auto max-w-[1400px] px-5 sm:px-8 preserve-3d">
+      <div className="mx-auto max-w-[1400px] px-5 sm:px-8 preserve-3d relative z-10">
         {/* Section Header */}
         <div className="mx-auto max-w-3xl text-center">
           <Reveal>
-            <p className="eyebrow">Visual Tour</p>
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#B88952]/40 bg-[#2A1D14]/80 backdrop-blur-md mb-3 shadow-[0_0_20px_rgba(184,137,82,0.15)]">
+              <span className="text-[10px] font-sans font-bold uppercase tracking-[0.3em] text-[#D8B477]">
+                3D PHOTOGRAPHY EXHIBITION
+              </span>
+            </div>
           </Reveal>
           <Reveal delay={100}>
-            <h2 className="mt-4 font-display text-4xl sm:text-5xl font-bold tracking-tight text-[#F5F1E8]">
+            <h2 className="mt-2 font-display text-4xl sm:text-5xl font-bold tracking-tight text-[#FFF9EF]">
               Moments Captured at Get To Gether
             </h2>
           </Reveal>
           <Reveal delay={200}>
-            <p className="mt-5 text-base sm:text-lg text-[#A9A59B] leading-relaxed font-light">
-              Explore 100% authentic photography from Get To Gether Restaurant Gurdaspur: our
-              coffee lounge, bamboo garden terrace, mandala art dining, and charcoal tandoor
-              feasts.
+            <p className="mt-4 text-xs sm:text-sm text-[#D3C4AF] leading-relaxed font-light max-w-2xl mx-auto">
+              100% authentic photography from Get To Gether Restaurant Gurdaspur: our coffee lounge, bamboo garden terrace, mandala feature wall, and live charcoal tandoor.
             </p>
           </Reveal>
         </div>
@@ -154,8 +146,8 @@ export function GallerySection({ onOpenPhoto }: GallerySectionProps) {
                 onClick={() => setSelectedCat(cat)}
                 className={`px-5 py-2 rounded-full text-xs font-semibold tracking-wider uppercase transition-all duration-300 ${
                   selectedCat === cat
-                    ? "bg-[#D6A84F] text-[#0E1110] shadow-lg shadow-[#D6A84F]/25 hover:bg-[#F1D08A] scale-105"
-                    : "bg-[#18201C] text-[#A9A59B] hover:bg-[#151A18] hover:text-[#F5F1E8] border border-[#D6A84F]/20"
+                    ? "bg-gradient-to-r from-[#B88952] to-[#D8B477] text-[#17110C] font-bold shadow-lg shadow-[#B88952]/30 scale-105"
+                    : "bg-[#2A1D14]/85 text-[#D3C4AF] hover:bg-[#4A3322]/80 hover:text-[#FFF9EF] border border-[#B88952]/20 backdrop-blur-md"
                 }`}
               >
                 {cat}
@@ -223,7 +215,7 @@ function GalleryCard3D({
           transform: `translate3d(${parallaxX}px, ${parallaxY}px, ${currentZ}px)`,
           transition: "transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease",
         }}
-        className={`group relative cursor-pointer overflow-hidden rounded-2xl border ${depth.border} bg-[#151A18]/80 break-inside-avoid ${depth.shadow} preserve-3d will-change-transform`}
+        className={`group relative cursor-pointer overflow-hidden rounded-2xl border ${depth.border} bg-[#2A1D14]/90 break-inside-avoid ${depth.shadow} preserve-3d will-change-transform`}
       >
         {/* Photo with 3D Depth Zoom */}
         <div className="overflow-hidden">
@@ -236,14 +228,14 @@ function GalleryCard3D({
         </div>
 
         {/* Ambient Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/35 to-transparent opacity-70 transition-opacity duration-300 group-hover:opacity-95" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#17110C]/95 via-[#17110C]/35 to-transparent opacity-75 transition-opacity duration-300 group-hover:opacity-95" />
 
         {/* Top Category Tag (Elevated Z: +20px inside card) */}
         <div
           style={{ transform: "translateZ(20px)" }}
           className="absolute top-4 left-4 preserve-3d"
         >
-          <span className="rounded-full border border-[#D6A84F]/40 bg-[#0E1110]/80 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-[#D6A84F] backdrop-blur-md shadow-lg">
+          <span className="rounded-full border border-[#B88952]/40 bg-[#17110C]/85 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-[#D8B477] backdrop-blur-md shadow-lg">
             {photo.category}
           </span>
         </div>
@@ -251,9 +243,9 @@ function GalleryCard3D({
         {/* Expand Icon (Elevated Z: +25px) */}
         <div
           style={{ transform: "translateZ(25px)" }}
-          className="absolute top-4 right-4 size-8 rounded-full bg-[#0E1110]/80 flex items-center justify-center text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100 backdrop-blur-md border border-[#D6A84F]/30 shadow-lg"
+          className="absolute top-4 right-4 size-8 rounded-full bg-[#17110C]/85 flex items-center justify-center text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100 backdrop-blur-md border border-[#B88952]/40 shadow-lg"
         >
-          <Maximize2 className="size-4 text-[#D6A84F]" />
+          <Maximize2 className="size-4 text-[#D8B477]" />
         </div>
 
         {/* Bottom Captions (Elevated Z: +24px) */}
@@ -261,10 +253,10 @@ function GalleryCard3D({
           style={{ transform: "translateZ(24px)" }}
           className="absolute bottom-0 inset-x-0 p-5 transition-transform duration-300 preserve-3d"
         >
-          <h3 className="font-display text-lg sm:text-xl font-bold text-[#F5F1E8] group-hover:text-[#D6A84F] transition-colors">
+          <h3 className="font-display text-lg sm:text-xl font-bold text-[#FFF9EF] group-hover:text-[#D8B477] transition-colors">
             {photo.title}
           </h3>
-          <p className="mt-1 text-xs text-[#A9A59B] line-clamp-2 leading-relaxed font-light">
+          <p className="mt-1 text-xs text-[#D3C4AF] line-clamp-2 leading-relaxed font-light">
             {photo.subtitle}
           </p>
         </div>

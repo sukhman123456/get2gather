@@ -301,49 +301,39 @@ export function DigitalMenu({ onOpenOriginalMenu }: DigitalMenuProps) {
   return (
     <section
       id="menu"
-      className="relative bg-[#0E1110] text-[#F5F1E8] py-24 sm:py-32 overflow-hidden border-t border-[#D6A84F]/15"
+      className="relative py-24 sm:py-32 overflow-hidden"
     >
-      {/* ── Background Subtle Lighting: Deep charcoal & secondary dark green ── */}
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,rgba(24,32,28,0.45)_0%,rgba(14,17,16,0.98)_70%)] pointer-events-none"
-      />
-      <div
-        aria-hidden="true"
-        className="absolute top-1/3 right-0 size-[500px] rounded-full bg-[#D6A84F]/5 blur-[160px] pointer-events-none"
-      />
-
-      <div className="relative mx-auto max-w-[1360px] px-4 sm:px-6 lg:px-8">
+      <div className="relative mx-auto max-w-[1360px] px-4 sm:px-6 lg:px-8 z-10">
 
         {/* ════════════════════════════════════════════════════════════
             MENU HEADER
             ════════════════════════════════════════════════════════════ */}
         <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-[#D6A84F]/30 bg-[#D6A84F]/10 mb-4">
-            <Sparkles className="size-3 text-[#D6A84F]" />
-            <span className="font-gurmukhi text-xs font-semibold text-[#D6A84F]">ਸਾਡਾ ਮੀਨੂ</span>
-            <span className="text-[#D6A84F]/50 text-xs">&bull;</span>
-            <span className="text-[10px] font-mono font-bold uppercase tracking-[0.3em] text-[#D6A84F]">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#B88952]/40 bg-[#2A1D14]/80 backdrop-blur-md mb-4 shadow-[0_0_20px_rgba(184,137,82,0.15)]">
+            <Sparkles className="size-3.5 text-[#D8B477]" />
+            <span className="font-gurmukhi text-xs font-semibold text-[#D8B477]">ਸਾਡਾ ਮੀਨੂ</span>
+            <span className="text-[#B88952] text-xs">&bull;</span>
+            <span className="text-[10px] font-sans font-bold uppercase tracking-[0.3em] text-[#F3E8D2]">
               AUTHENTIC FLAVOURS &bull; GURDASPUR
             </span>
           </div>
 
-          <h2 className="font-display text-4xl sm:text-6xl font-bold tracking-tight text-[#F5F1E8]">
-            THE MENU
+          <h2 className="font-display text-4xl sm:text-6xl font-bold tracking-tight text-[#FFF9EF]">
+            THE 3D MENU ROOM
           </h2>
-          <span className="font-gurmukhi text-2xl sm:text-3xl text-[#D6A84F] font-medium block mt-1">
+          <span className="font-gurmukhi text-2xl sm:text-3xl text-[#D8B477] font-medium block mt-1">
             ਗੈੱਟ ਟੂਗੈਦਰ ਖਾਸ ਪਕਵਾਨ
           </span>
 
-          <p className="mt-3 font-serif text-xl sm:text-2xl text-[#F5F1E8] italic font-light">
+          <p className="mt-3 font-serif text-xl sm:text-2xl text-[#FFF9EF] italic font-light">
             &ldquo;Good Food. Great Company.&rdquo;
           </p>
-          <p className="font-gurmukhi text-sm sm:text-base text-[#D6A84F]/90 mt-1">
+          <p className="font-gurmukhi text-sm sm:text-base text-[#D8B477]/90 mt-1">
             ਚੰਗਾ ਖਾਣਾ • ਵਧੀਆ ਸੰਗਤ
           </p>
 
-          <p className="mt-3 text-xs sm:text-sm text-[#A9A59B] leading-relaxed font-light max-w-xl mx-auto">
-            Explore our selection of authentic Punjabi handi gravies, live charcoal tandoor, artisanal pizzas, pastas &amp; handcrafted coolers.
+          <p className="mt-3 text-xs sm:text-sm text-[#D3C4AF] leading-relaxed font-light max-w-xl mx-auto">
+            Browse through our authentic Punjabi handi gravies, live charcoal tandoor dishes, artisanal pizzas, pastas &amp; handcrafted coolers.
           </p>
         </div>
 
@@ -352,45 +342,45 @@ export function DigitalMenu({ onOpenOriginalMenu }: DigitalMenuProps) {
             ════════════════════════════════════════════════════════════ */}
         <div className="mb-16">
           <div className="flex items-center gap-2 mb-6">
-            <span className="h-px w-6 bg-[#D6A84F]" />
-            <h3 className="font-display text-lg sm:text-xl font-bold uppercase tracking-wider text-[#D6A84F] flex items-center gap-2">
+            <span className="h-px w-6 bg-[#B88952]" />
+            <h3 className="font-display text-lg sm:text-xl font-bold uppercase tracking-wider text-[#D8B477] flex items-center gap-2">
               <span>CHEF&apos;S PICKS</span>
-              <span className="font-gurmukhi text-sm font-semibold text-[#F5F1E8]/80">&bull; ਸ਼ੈੱਫ ਦੀ ਖਾਸ ਪਸੰਦ</span>
+              <span className="font-gurmukhi text-sm font-semibold text-[#FFF9EF]/80">&bull; ਸ਼ੈੱਫ ਦੀ ਖਾਸ ਪਸੰਦ</span>
             </h3>
-            <span className="h-px flex-1 bg-[#D6A84F]/20" />
+            <span className="h-px flex-1 bg-[#B88952]/20" />
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
             {chefsPicks.map((pick) => (
               <div
                 key={pick.id}
-                className="group relative overflow-hidden rounded-2xl border border-[#D6A84F]/25 bg-gradient-to-b from-[#18201C] to-[#151A18] p-3.5 transition-all duration-300 hover:border-[#D6A84F]/60 hover:-translate-y-1.5 hover:shadow-[0_20px_40px_-10px_rgba(0,0,0,0.9),0_0_25px_rgba(214,168,79,0.2)]"
+                className="group relative overflow-hidden rounded-2xl border border-[#B88952]/30 bg-[#2A1D14]/85 p-4 backdrop-blur-md transition-all duration-300 hover:border-[#D8B477] hover:-translate-y-1.5 hover:shadow-[0_20px_40px_-10px_rgba(0,0,0,0.9),0_0_25px_rgba(184,137,82,0.25)]"
               >
                 {/* Real Photo */}
-                <div className="relative overflow-hidden rounded-xl aspect-[16/11] bg-black/60">
+                <div className="relative overflow-hidden rounded-xl aspect-[16/11] bg-black/60 border border-[#B88952]/20">
                   <img
                     src={pick.image}
                     alt={pick.title}
                     className="size-full object-cover transition-transform duration-700 group-hover:scale-105"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80" />
-                  <span className="absolute top-2.5 left-2.5 rounded-full border border-[#D6A84F]/40 bg-[#0E1110]/85 px-2.5 py-0.5 text-[9px] font-mono uppercase tracking-wider text-[#D6A84F] backdrop-blur-md">
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#17110C] via-transparent to-transparent opacity-85" />
+                  <span className="absolute top-2.5 left-2.5 rounded-full border border-[#B88952]/40 bg-[#17110C]/85 px-2.5 py-0.5 text-[9px] font-sans font-semibold uppercase tracking-wider text-[#D8B477] backdrop-blur-md">
                     {pick.tag} &bull; {pick.punjabiTag}
                   </span>
-                  <span className="absolute bottom-2.5 right-2.5 rounded-md border border-[#D6A84F]/40 bg-[#0E1110]/90 px-2.5 py-1 font-mono text-xs font-bold text-[#D6A84F] shadow-lg">
+                  <span className="absolute bottom-2.5 right-2.5 rounded-md border border-[#B88952]/40 bg-[#17110C]/90 px-2.5 py-1 font-mono text-xs font-bold text-[#D8B477] shadow-lg">
                     {pick.price}
                   </span>
                 </div>
 
                 <div className="mt-3 px-1">
-                  <h4 className="font-serif text-base font-bold text-[#F5F1E8] group-hover:text-[#D6A84F] transition-colors">
+                  <h4 className="font-serif text-base font-bold text-[#FFF9EF] group-hover:text-[#D8B477] transition-colors">
                     {pick.title}
                   </h4>
-                  <span className="font-gurmukhi text-xs font-medium text-[#D6A84F] block">
+                  <span className="font-gurmukhi text-xs font-medium text-[#D8B477] block">
                     {pick.punjabiTitle}
                   </span>
-                  <p className="mt-1 text-xs text-[#A9A59B] leading-relaxed font-light">
+                  <p className="mt-1 text-xs text-[#D3C4AF] leading-relaxed font-light">
                     {pick.subtitle}
                   </p>
                 </div>
@@ -400,10 +390,10 @@ export function DigitalMenu({ onOpenOriginalMenu }: DigitalMenuProps) {
         </div>
 
         {/* ════════════════════════════════════════════════════════════
-            CATEGORY BAR: Horizontal Navigation (Mobile Scrollable Chips)
+            CATEGORY BAR: Horizontal Navigation
             ════════════════════════════════════════════════════════════ */}
         <div className="mb-8">
-          <div className="relative border-b border-[#D6A84F]/20 pb-3">
+          <div className="relative border-b border-[#B88952]/20 pb-3">
             <div
               ref={categoryBarRef}
               className="flex gap-2 sm:gap-2.5 overflow-x-auto pb-2 scrollbar-none snap-x select-none"
@@ -420,20 +410,20 @@ export function DigitalMenu({ onOpenOriginalMenu }: DigitalMenuProps) {
                     }}
                     className={`relative shrink-0 snap-start px-4 sm:px-5 py-2.5 rounded-full text-xs font-bold tracking-wider transition-all duration-300 ${
                       isSelected
-                        ? "bg-gradient-to-r from-[#D6A84F] to-[#F1D08A] text-[#0E1110] font-extrabold shadow-[0_0_20px_rgba(214,168,79,0.35)] scale-105"
-                        : "bg-[#151A18] text-[#A9A59B] hover:text-[#F5F1E8] hover:bg-[#18201C] border border-[#D6A84F]/20"
+                        ? "bg-gradient-to-r from-[#B88952] to-[#D8B477] text-[#17110C] font-extrabold shadow-[0_0_20px_rgba(184,137,82,0.4)] scale-105"
+                        : "bg-[#2A1D14]/85 text-[#D3C4AF] hover:text-[#FFF9EF] hover:bg-[#4A3322]/80 border border-[#B88952]/20 backdrop-blur-md"
                     }`}
                   >
                     <div className="flex flex-col items-center">
                       <span>{cat}</span>
                       <span className={`font-gurmukhi text-[10px] font-normal leading-none mt-0.5 ${
-                        isSelected ? "text-[#0E1110]/85" : "text-[#D6A84F]/80"
+                        isSelected ? "text-[#17110C]/90 font-bold" : "text-[#D8B477]/80"
                       }`}>
                         {CATEGORY_PUNJABI[cat] || ""}
                       </span>
                     </div>
                     {isSelected && (
-                      <span className="absolute -bottom-3 inset-x-2 h-0.5 bg-[#D6A84F] rounded-full shadow-[0_0_8px_#D6A84F]" />
+                      <span className="absolute -bottom-3 inset-x-2 h-0.5 bg-[#D8B477] rounded-full shadow-[0_0_8px_#D8B477]" />
                     )}
                   </button>
                 );
@@ -444,19 +434,19 @@ export function DigitalMenu({ onOpenOriginalMenu }: DigitalMenuProps) {
 
         {/* ── Search Bar (Optional quick filter) ── */}
         <div className="relative mb-10 max-w-md">
-          <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 size-4 text-[#D6A84F]" />
+          <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 size-4 text-[#D8B477]" />
           <input
             type="text"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            placeholder="Search specific dish (e.g. Chicken Biryani, Butter Chicken, Mojito)..."
-            className="w-full rounded-xl border border-[#D6A84F]/20 bg-[#151A18] pl-10 pr-4 py-2.5 text-xs sm:text-sm text-[#F5F1E8] placeholder:text-[#A9A59B]/60 focus:border-[#D6A84F] focus:outline-none focus:ring-1 focus:ring-[#D6A84F]"
+            placeholder="Search dish (e.g. Biryani, Dal Makhani, Paneer, Mojito)..."
+            className="w-full rounded-xl border border-[#B88952]/30 bg-[#2A1D14]/80 pl-10 pr-4 py-2.5 text-xs sm:text-sm text-[#FFF9EF] placeholder:text-[#D3C4AF]/60 focus:border-[#D8B477] focus:outline-none focus:ring-1 focus:ring-[#D8B477]"
           />
           {searchQuery && (
             <button
               type="button"
               onClick={() => setSearchQuery("")}
-              className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-[#A9A59B] hover:text-[#F5F1E8]"
+              className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-[#D3C4AF] hover:text-[#FFF9EF]"
             >
               Clear
             </button>
@@ -464,14 +454,14 @@ export function DigitalMenu({ onOpenOriginalMenu }: DigitalMenuProps) {
         </div>
 
         {/* ════════════════════════════════════════════════════════════
-            MENU ITEMS: 3D Animated Grid
-            Old cards move backward in Z-axis + fade slightly
-            New cards come forward from Z-axis + fade in (300-500ms)
+            MENU ITEMS: 3D Animated Spatial Grid
+            Old cards move backward in Z-axis (translateZ -90px)
+            New cards move forward from Z-axis toward camera (translateZ 0px)
             ════════════════════════════════════════════════════════════ */}
         <div
           style={{
             transform: isTransitioning
-              ? "perspective(1200px) translateZ(-80px) rotateX(3deg) scale(0.94)"
+              ? "perspective(1200px) translateZ(-90px) rotateX(4deg) scale(0.92)"
               : "perspective(1200px) translateZ(0px) rotateX(0deg) scale(1)",
             opacity: isTransitioning ? 0.2 : 1,
             transition: "transform 360ms cubic-bezier(0.16, 1, 0.3, 1), opacity 360ms ease",
@@ -484,20 +474,20 @@ export function DigitalMenu({ onOpenOriginalMenu }: DigitalMenuProps) {
         </div>
 
         {/* ════════════════════════════════════════════════════════════
-            ORIGINAL MENU: Secondary button to open original photos in lightbox
+            ORIGINAL MENU: Button to open original photos in lightbox
             ════════════════════════════════════════════════════════════ */}
-        <div className="mt-16 sm:mt-20 pt-10 border-t border-[#D6A84F]/15 text-center">
+        <div className="mt-16 sm:mt-20 pt-10 border-t border-[#B88952]/20 text-center">
           <button
             type="button"
             onClick={() => onOpenOriginalMenu(0)}
-            className="group inline-flex items-center gap-2.5 rounded-full border border-[#D6A84F]/40 bg-[#151A18] px-7 py-3.5 text-xs sm:text-sm font-bold uppercase tracking-widest text-[#D6A84F] shadow-lg shadow-black transition-all duration-300 hover:border-[#D6A84F] hover:bg-[#D6A84F] hover:text-[#0E1110] hover:scale-105 active:scale-95"
+            className="group inline-flex items-center gap-2.5 rounded-full border border-[#B88952]/40 bg-[#2A1D14]/90 px-7 py-3.5 text-xs sm:text-sm font-bold uppercase tracking-widest text-[#D8B477] shadow-lg shadow-black transition-all duration-300 hover:border-[#D8B477] hover:bg-[#B88952] hover:text-[#17110C] hover:scale-105 active:scale-95"
           >
             <BookOpen className="size-4 transition-transform group-hover:rotate-12" />
-            <span>VIEW ORIGINAL MENU</span>
+            <span>VIEW ORIGINAL PRINTED MENU</span>
             <span className="text-[10px] opacity-75 font-normal">(Uploaded Photographs)</span>
           </button>
-          <p className="mt-3 text-xs text-[#A9A59B] max-w-sm mx-auto">
-            View the high-resolution scanned photographs of our authentic printed dining menu.
+          <p className="mt-3 text-xs text-[#D3C4AF] max-w-sm mx-auto">
+            View high-resolution photographs of our authentic printed dining menu pages.
           </p>
         </div>
 
@@ -506,7 +496,7 @@ export function DigitalMenu({ onOpenOriginalMenu }: DigitalMenuProps) {
   );
 }
 
-// ── 3D Interactive Menu Card ──
+// ── 3D Interactive Menu Card with Real Depth, Tilt, Copper Edge & Active Order ──
 function MenuCard3D({ item }: { item: MenuItemData }) {
   const [isHovered, setIsHovered] = useState(false);
   const [tilt, setTilt] = useState({ x: 0, y: 0 });
@@ -515,7 +505,7 @@ function MenuCard3D({ item }: { item: MenuItemData }) {
     const rect = e.currentTarget.getBoundingClientRect();
     const x = (e.clientX - rect.left) / rect.width - 0.5;
     const y = (e.clientY - rect.top) / rect.height - 0.5;
-    setTilt({ x: y * -6, y: x * 6 });
+    setTilt({ x: y * -7, y: x * 7 });
   };
 
   const whatsappHref = `https://wa.me/919988604160?text=${encodeURIComponent(
@@ -532,16 +522,16 @@ function MenuCard3D({ item }: { item: MenuItemData }) {
       }}
       style={{
         transform: isHovered
-          ? `perspective(800px) translateY(-4px) translateZ(12px) rotateX(${tilt.x}deg) rotateY(${tilt.y}deg)`
-          : "perspective(800px) translateY(0px) translateZ(0px) rotateX(0deg) rotateY(0deg)",
+          ? `perspective(900px) translateY(-5px) translateZ(16px) rotateX(${tilt.x}deg) rotateY(${tilt.y}deg)`
+          : "perspective(900px) translateY(0px) translateZ(0px) rotateX(0deg) rotateY(0deg)",
         boxShadow: isHovered
-          ? "0 18px 36px -8px rgba(0, 0, 0, 0.95), 0 0 22px -4px rgba(214, 168, 79, 0.22)"
+          ? "0 22px 45px -8px rgba(0, 0, 0, 0.95), 0 0 25px -4px rgba(184, 137, 82, 0.3)"
           : "0 6px 16px -4px rgba(0, 0, 0, 0.7)",
-        borderColor: isHovered ? "rgba(214, 168, 79, 0.55)" : "rgba(214, 168, 79, 0.16)",
+        borderColor: isHovered ? "rgba(216, 180, 119, 0.7)" : "rgba(184, 137, 82, 0.22)",
         transition:
           "transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.25s ease",
       }}
-      className="group relative flex flex-col justify-between rounded-xl border bg-gradient-to-b from-[#18201C]/90 to-[#151A18]/95 p-5 backdrop-blur-md will-change-transform"
+      className="group relative flex flex-col justify-between rounded-xl border bg-[#2A1D14]/85 p-5 backdrop-blur-md will-change-transform"
     >
       <div>
         {/* Top line: Name and Veg Indicator */}
@@ -561,38 +551,38 @@ function MenuCard3D({ item }: { item: MenuItemData }) {
                 />
               </span>
             )}
-            <h4 className="font-serif text-base sm:text-lg font-bold text-[#F5F1E8] group-hover:text-[#D6A84F] transition-colors leading-snug">
+            <h4 className="font-serif text-base sm:text-lg font-bold text-[#FFF9EF] group-hover:text-[#D8B477] transition-colors leading-snug">
               {item.name}
             </h4>
           </div>
 
-          {/* Price Tag */}
-          <span className="font-mono text-base font-bold text-[#D6A84F] shrink-0">
+          {/* Price Tag (moves slightly on hover) */}
+          <span className="font-mono text-base font-bold text-[#D8B477] shrink-0 transition-transform duration-300 group-hover:translate-x-0.5">
             {item.price}
           </span>
         </div>
 
-        {/* Description: ONLY IF PRESENT IN ORIGINAL MENU */}
+        {/* Description */}
         {item.description && (
-          <p className="mt-1.5 text-xs text-[#A9A59B] font-sans leading-relaxed">
+          <p className="mt-1.5 text-xs text-[#D3C4AF] font-sans leading-relaxed">
             {item.description}
           </p>
         )}
       </div>
 
-      {/* Bottom Subtle Order Action */}
-      <div className="mt-4 pt-3 border-t border-[#D6A84F]/10 flex items-center justify-between text-xs">
-        <span className="text-[10px] font-mono uppercase tracking-wider text-[#A9A59B]/70">
+      {/* Bottom Order Action (becomes active and highlighted) */}
+      <div className="mt-4 pt-3 border-t border-[#B88952]/15 flex items-center justify-between text-xs">
+        <span className="text-[10px] font-mono uppercase tracking-wider text-[#D3C4AF]/70">
           Get To Gether
         </span>
         <a
           href={whatsappHref}
           target="_blank"
           rel="noreferrer"
-          className="inline-flex items-center gap-1.5 text-emerald-400 hover:text-emerald-300 font-semibold transition-colors"
+          className="inline-flex items-center gap-1.5 rounded-md px-2.5 py-1 text-xs font-semibold uppercase tracking-wider text-[#D8B477] border border-[#B88952]/30 group-hover:border-[#D8B477] group-hover:bg-[#B88952] group-hover:text-[#17110C] transition-all duration-300"
         >
           <MessageCircle className="size-3.5" />
-          <span>Order</span>
+          <span>ORDER</span>
         </a>
       </div>
     </div>

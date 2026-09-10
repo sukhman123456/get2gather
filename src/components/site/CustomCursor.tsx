@@ -2,12 +2,12 @@ import { useEffect, useState } from "react";
 
 export function CustomCursor() {
   const [position, setPosition] = useState({ x: -100, y: -100 });
+  const [cursorText, setCursorText] = useState<string | null>(null);
   const [isHovered, setIsHovered] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const [isTouchDevice, setIsTouchDevice] = useState(true);
 
   useEffect(() => {
-    // Check if device supports true hover pointer (desktop mouse)
     const mediaQuery = window.matchMedia("(hover: hover) and (pointer: fine)");
     if (!mediaQuery.matches) {
       setIsTouchDevice(true);
@@ -27,24 +27,33 @@ export function CustomCursor() {
       if (!isVisible) setIsVisible(true);
     };
 
-    const handleMouseLeave = () => {
-      setIsVisible(false);
-    };
-
-    const handleMouseEnter = () => {
-      setIsVisible(true);
-    };
-
-    // Check if mouse is over clickable elements
     const handleElementHover = (e: MouseEvent) => {
       const target = e.target as HTMLElement | null;
       if (!target) return;
-      const isInteractive = target.closest("a, button, input, select, [role='button'], .cursor-pointer");
-      setIsHovered(!!isInteractive);
+
+      const interactive = target.closest("a, button, input, select, [role='button'], .cursor-pointer");
+      const card3D = target.closest(".perspective-1000, .perspective-1200, [data-explore]");
+      const imgTarget = target.closest("img, [data-view]");
+
+      if (card3D) {
+        setCursorText("EXPLORE");
+        setIsHovered(true);
+      } else if (imgTarget && interactive) {
+        setCursorText("VIEW");
+        setIsHovered(true);
+      } else if (interactive) {
+        setCursorText(null);
+        setIsHovered(true);
+      } else {
+        setCursorText(null);
+        setIsHovered(false);
+      }
     };
 
+    const handleMouseLeave = () => setIsVisible(false);
+    const handleMouseEnter = () => setIsVisible(true);
+
     const animate = () => {
-      // Smooth lerp following
       currentX += (targetX - currentX) * 0.18;
       currentY += (targetY - currentY) * 0.18;
       setPosition({ x: currentX, y: currentY });
@@ -70,32 +79,37 @@ export function CustomCursor() {
 
   return (
     <>
-      {/* 1. Subtle warm ambient light follower (simulates candle aura on surfaces) */}
+      {/* Warm ambient candlelight halo on surfaces */}
       <div
         aria-hidden="true"
-        className="pointer-events-none fixed z-40 size-80 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(214,168,79,0.06)_0%,rgba(214,168,79,0.02)_45%,transparent_75%)] blur-2xl transition-opacity duration-300"
+        className="pointer-events-none fixed z-40 size-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(184,137,82,0.07)_0%,transparent_75%)] blur-2xl"
         style={{
           left: `${position.x}px`,
           top: `${position.y}px`,
         }}
       />
 
-      {/* 2. Precision luxury cursor dot & ring */}
+      {/* Luxury Minimal Cursor with dynamic badge text */}
       <div
         aria-hidden="true"
-        className="pointer-events-none fixed z-50 -translate-x-1/2 -translate-y-1/2 rounded-full transition-[width,height,background-color,border-color] duration-200 ease-out"
+        className={`pointer-events-none fixed z-50 flex -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full transition-all duration-200 ease-out select-none ${
+          cursorText
+            ? "size-14 border border-[#D8B477] bg-[#17110C]/90 shadow-[0_0_20px_rgba(184,137,82,0.4)]"
+            : isHovered
+            ? "size-9 border border-[#B88952]/80 bg-[#B88952]/15 shadow-[0_0_15px_rgba(184,137,82,0.3)]"
+            : "size-2.5 bg-[#D8B477] shadow-[0_0_8px_rgba(216,180,119,0.7)]"
+        }`}
         style={{
           left: `${position.x}px`,
           top: `${position.y}px`,
-          width: isHovered ? "36px" : "8px",
-          height: isHovered ? "36px" : "8px",
-          backgroundColor: isHovered ? "rgba(214, 168, 79, 0.08)" : "#D6A84F",
-          border: isHovered ? "1px solid rgba(214, 168, 79, 0.55)" : "none",
-          boxShadow: isHovered
-            ? "0 0 15px rgba(214, 168, 79, 0.3)"
-            : "0 0 8px rgba(214, 168, 79, 0.6)",
         }}
-      />
+      >
+        {cursorText && (
+          <span className="font-sans text-[8.5px] font-bold tracking-widest text-[#D8B477] uppercase">
+            {cursorText}
+          </span>
+        )}
+      </div>
     </>
   );
 }

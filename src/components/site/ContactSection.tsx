@@ -5,18 +5,8 @@ import { Reveal } from "./Reveal";
 
 export function ContactSection() {
   return (
-    <section id="contact" className="relative bg-[#0E1110] py-24 sm:py-32 overflow-hidden border-t border-[#D6A84F]/15">
-      {/* Background Ambience */}
-      <div
-        aria-hidden="true"
-        className="absolute top-1/2 right-10 size-[500px] rounded-full bg-[#D6A84F]/5 blur-[160px] pointer-events-none"
-      />
-      <div
-        aria-hidden="true"
-        className="absolute bottom-10 left-10 size-[400px] rounded-full bg-[#18201C] blur-[140px] pointer-events-none"
-      />
-
-      <div className="mx-auto max-w-[1400px] px-5 sm:px-8">
+    <section id="contact" className="relative py-24 sm:py-32 overflow-hidden border-t border-[#B88952]/15">
+      <div className="mx-auto max-w-[1400px] px-5 sm:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           
           {/* ════════════════════════════════════════════════════════════
@@ -28,32 +18,32 @@ export function ContactSection() {
               <div className="flex items-center gap-4 mb-5">
                 <Logo3DEmblem size="nav" enableMouseParallax={false} />
                 <div>
-                  <h3 className="font-display text-lg sm:text-xl font-bold uppercase tracking-wider text-[#F5F1E8] leading-tight">
+                  <h3 className="font-display text-lg sm:text-xl font-bold uppercase tracking-wider text-[#FFF9EF] leading-tight">
                     Get To Gether
                   </h3>
-                  <p className="text-[10px] uppercase font-mono tracking-[0.25em] text-[#D6A84F]">
+                  <p className="text-[10px] uppercase font-sans tracking-[0.25em] text-[#D8B477]">
                     Restaurant &bull; Gurdaspur
                   </p>
                 </div>
               </div>
 
               <Reveal>
-                <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-[#D6A84F]/30 bg-[#D6A84F]/10 mb-3">
-                  <span className="text-[10px] font-mono font-bold uppercase tracking-[0.3em] text-[#D6A84F]">
+                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#B88952]/40 bg-[#2A1D14]/80 backdrop-blur-md mb-3 shadow-[0_0_20px_rgba(184,137,82,0.15)]">
+                  <span className="text-[10px] font-sans font-bold uppercase tracking-[0.3em] text-[#D8B477]">
                     FIND &bull; CONNECT
                   </span>
                 </div>
               </Reveal>
 
               <Reveal delay={100}>
-                <h2 className="mt-2 font-display text-3xl sm:text-4xl font-bold tracking-tight text-[#F5F1E8]">
+                <h2 className="mt-2 font-display text-3xl sm:text-4xl font-bold tracking-tight text-[#FFF9EF]">
                   Visit Get To Gether
                 </h2>
               </Reveal>
               <Reveal delay={160}>
-                <p className="mt-3 text-xs sm:text-sm text-[#A9A59B] leading-relaxed font-light">
+                <p className="mt-3 text-xs sm:text-sm text-[#D3C4AF] leading-relaxed font-light">
                   Conveniently situated on Tibri Road near Punjab Nursery in Gurdaspur, Punjab. Join
-                  us for indoor dining, garden terrace, takeaway, or private parties.
+                  us for indoor dining, bamboo garden terrace, takeaway, or private parties.
                 </p>
               </Reveal>
             </div>
@@ -62,22 +52,22 @@ export function ContactSection() {
             <div className="space-y-4">
               {/* Address */}
               <Reveal delay={200}>
-                <div className="flex items-start gap-4 p-5 rounded-2xl border border-[#D6A84F]/20 bg-[#151A18]/90 backdrop-blur-md transition-all duration-300 hover:border-[#D6A84F]/45">
-                  <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-[#D6A84F]/15 text-[#D6A84F]">
+                <div className="flex items-start gap-4 p-5 rounded-2xl border border-[#B88952]/30 bg-[#2A1D14]/90 backdrop-blur-md transition-all duration-300 hover:border-[#D8B477]">
+                  <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-[#B88952]/15 text-[#D8B477]">
                     <MapPin className="size-5" />
                   </div>
                   <div>
-                    <h3 className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#D6A84F]">
+                    <h3 className="text-[11px] font-sans font-bold uppercase tracking-wider text-[#D8B477]">
                       Address
                     </h3>
-                    <p className="mt-1 text-sm text-[#F5F1E8] font-medium leading-snug">
+                    <p className="mt-1 text-sm text-[#FFF9EF] font-medium leading-snug">
                       {DAWAT_INFO.address}
                     </p>
                     <a
                       href={DAWAT_INFO.directionsUrl}
                       target="_blank"
                       rel="noreferrer"
-                      className="mt-2 inline-flex items-center gap-1.5 text-xs text-[#D6A84F] hover:underline font-semibold"
+                      className="mt-2 inline-flex items-center gap-1.5 text-xs text-[#D8B477] hover:underline font-semibold"
                     >
                       <span>Get Driving Directions</span>
                       <ExternalLink className="size-3" />
@@ -88,23 +78,23 @@ export function ContactSection() {
 
               {/* Phone Numbers */}
               <Reveal delay={260}>
-                <div className="flex items-start gap-4 p-5 rounded-2xl border border-[#D6A84F]/20 bg-[#151A18]/90 backdrop-blur-md transition-all duration-300 hover:border-[#D6A84F]/45">
-                  <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-[#D6A84F]/15 text-[#D6A84F]">
+                <div className="flex items-start gap-4 p-5 rounded-2xl border border-[#B88952]/30 bg-[#2A1D14]/90 backdrop-blur-md transition-all duration-300 hover:border-[#D8B477]">
+                  <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-[#B88952]/15 text-[#D8B477]">
                     <Phone className="size-5" />
                   </div>
                   <div>
-                    <h3 className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#D6A84F]">
+                    <h3 className="text-[11px] font-sans font-bold uppercase tracking-wider text-[#D8B477]">
                       Phone Inquiries
                     </h3>
-                    <p className="mt-1 text-sm text-[#F5F1E8]">
+                    <p className="mt-1 text-sm text-[#FFF9EF]">
                       Mobile:{" "}
-                      <a href={DAWAT_INFO.phoneHref} className="hover:text-[#D6A84F] transition font-mono font-semibold">
+                      <a href={DAWAT_INFO.phoneHref} className="hover:text-[#D8B477] transition font-mono font-semibold">
                         {DAWAT_INFO.phoneDisplay}
                       </a>
                     </p>
-                    <p className="text-xs text-[#A9A59B] mt-0.5">
+                    <p className="text-xs text-[#D3C4AF] mt-0.5">
                       Landline:{" "}
-                      <a href={DAWAT_INFO.landlineHref} className="hover:text-[#D6A84F] transition font-mono">
+                      <a href={DAWAT_INFO.landlineHref} className="hover:text-[#D8B477] transition font-mono">
                         {DAWAT_INFO.landlineDisplay}
                       </a>
                     </p>

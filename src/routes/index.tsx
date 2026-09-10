@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 
 import { LoadingScreen } from "@/components/site/LoadingScreen";
@@ -8,6 +8,7 @@ import { AboutExperience } from "@/components/site/AboutExperience";
 import { MenuIntroSection } from "@/components/site/MenuIntroSection";
 import { DigitalMenu } from "@/components/site/DigitalMenu";
 import { FoodCoffeeSection } from "@/components/site/FoodCoffeeSection";
+import { BambooCelebrationSection } from "@/components/site/BambooCelebrationSection";
 import { Promo3DBoard } from "@/components/site/Promo3DBoard";
 import { GallerySection } from "@/components/site/GallerySection";
 import { ALL_GALLERY_PHOTOS } from "@/lib/galleryData";
@@ -18,6 +19,7 @@ import { Footer } from "@/components/site/Footer";
 import { LightboxModal, LightboxImage } from "@/components/site/LightboxModal";
 import { FloatingWhatsAppButton } from "@/components/site/FloatingWhatsAppButton";
 import { CustomCursor } from "@/components/site/CustomCursor";
+import { RestaurantWorldCanvas, RestaurantCanvasHandle } from "@/components/site/RestaurantWorldCanvas";
 
 import { DAWAT_INFO, ORIGINAL_MENU_PAGES } from "@/lib/dawatData";
 
@@ -99,7 +101,24 @@ export const Route = createFileRoute("/")({
   component: HomePage,
 });
 
+const ZONE_NAMES = [
+  "Restaurant Entrance",
+  "Dining Sanctuary",
+  "Mandala Feature Wall",
+  "Artisanal Coffee Lounge",
+  "Live Charcoal Tandoor",
+  "Signature Food Showcase",
+  "3D Menu Experience",
+  "Signature Sips Mocktail Bar",
+  "Al-Fresco Bamboo Garden",
+  "Celebration Banquet Suite",
+  "3D Photo Exhibition",
+  "VIP Table Reservation",
+];
+
 function HomePage() {
+  const canvasRef = useRef<RestaurantCanvasHandle>(null);
+  const [currentZoneIndex, setCurrentZoneIndex] = useState(0);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxImages, setLightboxImages] = useState<LightboxImage[]>([]);
   const [lightboxIndex, setLightboxIndex] = useState(0);
@@ -131,51 +150,58 @@ function HomePage() {
   };
 
   return (
-    <div id="top" className="min-h-screen bg-background text-foreground overflow-x-hidden">
-      {/* ── 3. Premium Loading Screen with Official 3D Logo & Light Sweep ── */}
+    <div id="top" className="min-h-screen bg-[#17110C] text-[#FFF9EF] overflow-x-hidden relative">
+      {/* ── 1. Real Continuous 3D WebGL Restaurant Canvas (Three.js & GSAP ScrollTrigger) ── */}
+      <RestaurantWorldCanvas
+        ref={canvasRef}
+        onZoneChange={(idx) => setCurrentZoneIndex(idx)}
+      />
+
+      {/* ── 2. Premium 3D Loading Screen with Drawing Copper Line ── */}
       <LoadingScreen />
 
-      {/* ── Subtle Desktop Custom Cursor & Ambient Candlelight Follower ── */}
+      {/* ── 3. Desktop Luxury Custom Cursor with Dynamic Badges ('EXPLORE' / 'VIEW') ── */}
       <CustomCursor />
 
-      {/* ── 2. Sticky Premium Navbar with crisp, uncropped 3D Logo Emblem ── */}
-      <Navbar />
+      {/* ── 4. Sticky Floating Minimal Navbar with Active 3D Room Tracker & Sound Toggle ── */}
+      <Navbar currentZoneName={ZONE_NAMES[currentZoneIndex]} />
 
-      <main>
-        {/* ── 1 & 4. Premium 3D Hero with Floating 3D Logo Emblem & 3D Promotional Board ── */}
+      <main className="relative z-10">
+        {/* ── ZONE 0: 3D Entrance & Grand Façade Hero ── */}
         <Hero3D onOpenPoster={() => handleOpenOriginalMenu(0)} />
 
-        {/* ── The Get To Gether Experience: Ambience, dining, family, celebrations ── */}
-        <AboutExperience />
+        {/* ── ZONE 1 & 2: Dining Sanctuary & Mandala Feature Wall + 3D Virtual Tour ── */}
+        <AboutExperience
+          onEnterSpace={(zoneIdx) => canvasRef.current?.flyToZone(zoneIdx)}
+        />
 
-        {/* ── Premium Menu Intro Section (Replaces Old Featured Board) ── */}
+        {/* ── ZONE 4 & 3: Live Charcoal Tandoor, Food Showcase, Coffee & Mocktails ── */}
+        <FoodCoffeeSection />
+
+        {/* ── ZONE 6: Full 3D Interactive Menu Room ── */}
         <MenuIntroSection onOpenOriginalMenu={handleOpenOriginalMenu} />
-
-        {/* ── Digital Menu with exact items, prices, search, filters & original menu lightbox ── */}
         <DigitalMenu onOpenOriginalMenu={handleOpenOriginalMenu} />
 
-        {/* ── Food & Coffee Section: "More Than A Meal" with 3D floating presentation ── */}
-        <div id="coffee">
-          <FoodCoffeeSection />
-        </div>
+        {/* ── ZONE 8 & 9: Al-Fresco Bamboo Garden & Celebration Banquet Suite ── */}
+        <BambooCelebrationSection />
 
-        {/* ── 3D Promotion: Floating 3D Promotional Board for Specials ── */}
+        {/* ── Floating 3D Promotional Board for Specials ── */}
         <Promo3DBoard onOpenPoster={() => handleOpenOriginalMenu(5)} />
 
-        {/* ── Gallery: All real photos including Gurdaspur cafe & garden patio ── */}
+        {/* ── ZONE 10: 3D Multi-Plane Photography Exhibition ── */}
         <GallerySection onOpenPhoto={handleOpenGalleryPhoto} />
 
-        {/* ── 3D Floating Image Space ── */}
+        {/* ── 3D Floating Interactive Image Space ── */}
         <Floating3DExperience />
 
-        {/* ── Book a Table: WhatsApp reservation form & Call Now ── */}
+        {/* ── ZONE 11: VIP Candlelit Table Reservation & Booking ── */}
         <ReservationSection />
 
-        {/* ── Contact Section: Map, directions, WhatsApp, Facebook ── */}
+        {/* ── ZONE 12: Contact, Location & Driving Directions ── */}
         <ContactSection />
       </main>
 
-      {/* ── 5. Footer with Official 3D Logo Emblem ── */}
+      {/* ── Footer with 3D Emblem & Luxury Copper Links ── */}
       <Footer />
 
       {/* ── Fullscreen Interactive Lightbox Modal ── */}
@@ -187,7 +213,7 @@ function HomePage() {
         onNavigate={(newIndex) => setLightboxIndex(newIndex)}
       />
 
-      {/* ── Persistent Floating WhatsApp CTA (Desktop & Mobile) ── */}
+      {/* ── Floating WhatsApp Reservation CTA ── */}
       <FloatingWhatsAppButton />
     </div>
   );

@@ -21,13 +21,17 @@
   --color-muted-foreground: var(--muted-foreground);
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
-  --color-gold: var(--gold);
-  --color-gold-muted: var(--gold-muted);
-  --color-gold-highlight: var(--gold-highlight);
-  --color-dark-green: var(--dark-green);
+  --color-copper: var(--copper);
+  --color-champagne: var(--champagne);
+  --color-espresso: var(--espresso);
+  --color-coffee: var(--coffee);
+  --color-cream: var(--cream);
+  --color-ivory: var(--ivory);
+  --color-gold: var(--champagne);
+  --color-gold-muted: var(--copper-muted);
+  --color-gold-highlight: var(--champagne-highlight);
   --color-dark-card: var(--dark-card);
   --color-wood: var(--wood);
-  --color-forest: var(--forest);
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
@@ -40,43 +44,42 @@
 :root {
   --radius: 0.5rem;
 
-  /* Primary Dark: #0E1110 (Deep Charcoal) */
-  --background: #0E1110;
-  --foreground: #F5F1E8;
+  /* 70% Deep Espresso & Dark Coffee base */
+  --espresso: #17110C;
+  --coffee: #2A1D14;
+  --background: #17110C;
+  --foreground: #FFF9EF;
 
-  /* Dark Cards: #151A18 */
-  --card: #151A18;
-  --card-foreground: #F5F1E8;
+  /* Cards & architectural panels: Dark Coffee */
+  --card: #2A1D14;
+  --card-foreground: #FFF9EF;
+  --dark-card: #1D150F;
 
-  /* Primary: Champagne Gold #D6A84F */
-  --primary: #D6A84F;
-  --primary-foreground: #0E1110;
+  /* 10% Copper & Champagne Gold accents */
+  --copper: #B88952;
+  --copper-muted: rgba(184, 137, 82, 0.18);
+  --champagne: #D8B477;
+  --champagne-highlight: #F5DEB3;
+  --primary: #B88952;
+  --primary-foreground: #17110C;
+  --accent: #D8B477;
+  --accent-foreground: #17110C;
 
-  /* Secondary Dark Green: #18201C */
-  --secondary: #18201C;
-  --secondary-foreground: #F5F1E8;
+  /* Secondary: Warm Brown */
+  --wood: #4A3322;
+  --secondary: #4A3322;
+  --secondary-foreground: #FFF9EF;
 
-  /* Muted tones: #18201C / #A9A59B */
-  --muted: #18201C;
-  --muted-foreground: #A9A59B;
+  /* 20% Warm Cream & Ivory */
+  --cream: #F3E8D2;
+  --ivory: #FFF9EF;
+  --muted: #2A1D14;
+  --muted-foreground: #D3C4AF;
 
-  /* Accent: Champagne Gold & Soft Gold Highlight */
-  --accent: #D6A84F;
-  --accent-foreground: #0E1110;
-
-  /* Custom luxury tokens */
-  --gold: #D6A84F;
-  --gold-highlight: #F1D08A;
-  --gold-muted: rgba(214, 168, 79, 0.15);
-  --dark-green: #18201C;
-  --dark-card: #151A18;
-  --wood: #a66a38;
-  --forest: #18201C;
-
-  /* Borders & inputs with subtle champagne gold tint */
-  --border: rgba(214, 168, 79, 0.18);
-  --input: rgba(214, 168, 79, 0.22);
-  --ring: #D6A84F;
+  /* Borders with refined copper & champagne glow */
+  --border: rgba(184, 137, 82, 0.22);
+  --input: rgba(184, 137, 82, 0.28);
+  --ring: #B88952;
 }
 
 @layer base {
@@ -128,27 +131,37 @@
 }
 
 @utility gold-gradient-text {
-  background: linear-gradient(135deg, #F1D08A 0%, #D6A84F 50%, #F5F1E8 100%);
+  background: linear-gradient(135deg, #F5DEB3 0%, #D8B477 45%, #B88952 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@utility copper-gradient-text {
+  background: linear-gradient(135deg, #FFF9EF 0%, #D8B477 40%, #B88952 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 @utility gold-border-glow {
-  box-shadow: 0 0 25px -5px rgba(214, 168, 79, 0.22);
+  box-shadow: 0 0 25px -5px rgba(184, 137, 82, 0.25);
+}
+
+@utility copper-border-glow {
+  box-shadow: 0 0 30px -4px rgba(184, 137, 82, 0.32);
 }
 
 @utility glass-panel {
-  background: rgba(21, 26, 24, 0.76);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(214, 168, 79, 0.16);
+  background: rgba(23, 17, 12, 0.78);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(184, 137, 82, 0.22);
 }
 
 @utility glass-dark {
-  background: rgba(14, 17, 16, 0.88);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(214, 168, 79, 0.14);
+  background: rgba(23, 17, 12, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(184, 137, 82, 0.2);
 }
 
 /* 3D Depth Utilities */

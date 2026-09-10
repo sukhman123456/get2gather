@@ -1,309 +1,218 @@
-import { useState, useRef, useEffect } from "react";
-import { Heart, Sparkles, Coffee, Users, Wine, PartyPopper, Eye } from "lucide-react";
-import { DAWAT_INFO, REAL_PHOTOS } from "@/lib/dawatData";
+import { useState, useRef } from "react";
+import { Sparkles, Heart, Users, Coffee, Wine, PartyPopper, Compass, ArrowRight } from "lucide-react";
+import { REAL_PHOTOS } from "@/lib/dawatData";
 import { Reveal } from "./Reveal";
+
+interface AboutExperienceProps {
+  onEnterSpace?: (zoneIndex: number) => void;
+}
 
 const experiencePillars = [
   {
     icon: Sparkles,
-    title: "Premium Ambience",
-    description:
-      "Crafted with warm wood ceilings, contemporary pendant lighting, textured stone walls, and our signature illuminated lounge.",
+    title: "Dining Sanctuary",
+    description: "Crafted with dark timber ceiling beams, intimate candlelight, and plush dining seating.",
     tag: "Aesthetic & Cozy",
+    zoneIndex: 1,
   },
   {
     icon: Heart,
-    title: "Comfortable Dining",
-    description:
-      "Spacious dining layouts, plush seating, and attentive hospitality tailored for relaxing lunches and late evening dinners.",
-    tag: "Relax & Unwind",
-  },
-  {
-    icon: Users,
-    title: "Family-Friendly Environment",
-    description:
-      "A respected dining destination in Gurdaspur loved by families across generations for safe, wholesome, and welcoming dining.",
-    tag: "For All Ages",
-  },
-  {
-    icon: Wine,
-    title: "Authentic Food & Flavours",
-    description:
-      "Charcoal-roasted tandoori snacks, rich slow-simmered handi gravies, sizzling platters, and authentic Punjabi cooking.",
-    tag: "Clay Oven Mastery",
+    title: "Mandala Wall Feature",
+    description: "Handcrafted architectural centerpiece with multi-layered depth, brass rim, and spherical chandelier.",
+    tag: "Architectural Marvel",
+    zoneIndex: 2,
   },
   {
     icon: Coffee,
-    title: "Coffee & Conversations",
-    description:
-      "Freshly frothed espresso, artisanal latte art, chilled thick coffees with ice cream, and refreshing mocktails for casual meetups.",
-    tag: "Cafe & Mocktails",
+    title: "Artisanal Coffee Lounge",
+    description: "Freshly frothed espresso, delicate steam, and chilled artisan brews for memorable conversations.",
+    tag: "Cafe & Conversations",
+    zoneIndex: 3,
+  },
+  {
+    icon: Wine,
+    title: "Live Charcoal Tandoor",
+    description: "Authentic earthenware clay oven with glowing coals, fiery embers, and succulent kebabs.",
+    tag: "Fire & Smoke",
+    zoneIndex: 4,
+  },
+  {
+    icon: Users,
+    title: "Al-Fresco Bamboo Terrace",
+    description: "Gentle breeze swaying natural bamboo stalks beneath warm evening festoon fairy lights.",
+    tag: "Open-Air Garden",
+    zoneIndex: 8,
   },
   {
     icon: PartyPopper,
-    title: "Celebrations & Gatherings",
-    description:
-      "Dedicated banquet hall and vibrant party space with customized festive balloon setups for birthdays, anniversaries, and reunions.",
-    tag: "Private Events",
+    title: "Celebration Suite",
+    description: "Festive private banquet space adorned with metallic balloons and custom celebration decor.",
+    tag: "Banquet & Events",
+    zoneIndex: 9,
   },
 ];
 
-const photoPanels = [
+const virtualTourSpaces = [
   {
-    id: "p1",
-    title: "Warm Dining Sanctuary",
-    subtitle: "Plush leather booth seating, glowing chandeliers & warm intimate dining settings",
-    image: REAL_PHOTOS.luxuryDiningLounge,
-    baseZ: 25,
-    tag: "Dining Lounge",
-  },
-  {
-    id: "p2",
-    title: "Artisan Mandala Wall",
-    subtitle: "Hand-painted traditional mandala motif with spherical modern chandelier",
-    image: REAL_PHOTOS.gurdaspurMandalaWall,
-    baseZ: 50,
-    tag: "Architectural Feature",
-  },
-  {
-    id: "p3",
-    title: "Outdoor Bamboo Courtyard",
-    subtitle: "Open-air pergola dining under natural bamboo cane canopy and greenery",
-    image: REAL_PHOTOS.gurdaspurBambooGarden,
-    baseZ: 18,
-    tag: "Al-Fresco Terrace",
-  },
-  {
-    id: "p4",
-    title: "Rustic Coffee Lounge",
-    subtitle: "Exposed wood beams, glowing amber glass pendants & coffee mural",
+    number: "01",
+    title: "ARTISANAL CAFE & COFFEE LOUNGE",
+    description: "Exposed wood beams, glowing espresso bar, floating porcelain coffee cup & aromatic roasted beans.",
     image: REAL_PHOTOS.gurdaspurCafeCeiling,
-    baseZ: 40,
-    tag: "Cafe Experience",
+    zoneIndex: 3,
+  },
+  {
+    number: "02",
+    title: "OUTDOOR BAMBOO GARDEN TERRACE",
+    description: "Natural bamboo canopy, ambient fairy lights, open sky, and serene outdoor evening dining.",
+    image: REAL_PHOTOS.gurdaspurBambooGarden,
+    zoneIndex: 8,
+  },
+  {
+    number: "03",
+    title: "MANDALA FEATURE WALL DINING",
+    description: "Intimate dining lounge framed by the monumental 3D sculpted mandala and brass spherical chandelier.",
+    image: REAL_PHOTOS.gurdaspurMandalaWall,
+    zoneIndex: 2,
   },
 ];
 
-export function AboutExperience() {
-  const showcaseRef = useRef<HTMLDivElement>(null);
-  const [mouseOffset, setMouseOffset] = useState({ x: 0, y: 0 });
+export function AboutExperience({ onEnterSpace }: AboutExperienceProps) {
+  const [activeTourIndex, setActiveTourIndex] = useState<number | null>(null);
 
-  useEffect(() => {
-    const handlePointerMove = (e: MouseEvent | TouchEvent) => {
-      if (!showcaseRef.current) return;
-      const clientX = "touches" in e ? e.touches[0].clientX : e.clientX;
-      const clientY = "touches" in e ? e.touches[0].clientY : e.clientY;
-      const rect = showcaseRef.current.getBoundingClientRect();
-
-      if (clientY < rect.top - 150 || clientY > rect.bottom + 150) return;
-
-      const x = (clientX - (rect.left + rect.width / 2)) / (rect.width / 2);
-      const y = (clientY - (rect.top + rect.height / 2)) / (rect.height / 2);
-
-      setMouseOffset({
-        x: Math.max(-1, Math.min(1, x)),
-        y: Math.max(-1, Math.min(1, y)),
-      });
-    };
-
-    window.addEventListener("mousemove", handlePointerMove, { passive: true });
-    window.addEventListener("touchmove", handlePointerMove, { passive: true });
-
-    return () => {
-      window.removeEventListener("mousemove", handlePointerMove);
-      window.removeEventListener("touchmove", handlePointerMove);
-    };
-  }, []);
+  const handleEnter = (zoneIndex: number) => {
+    onEnterSpace?.(zoneIndex);
+  };
 
   return (
-    <section id="about" className="relative bg-[#0E1110] text-[#F5F1E8] py-24 sm:py-32 overflow-hidden">
-      {/* Background ambient glow */}
-      <div
-        aria-hidden="true"
-        className="absolute top-1/2 left-0 -translate-y-1/2 size-96 rounded-full bg-[#D6A84F]/5 blur-3xl pointer-events-none"
-      />
-      <div
-        aria-hidden="true"
-        className="absolute top-1/4 right-0 size-80 rounded-full bg-[#18201C]/50 blur-3xl pointer-events-none"
-      />
-
-      <div className="mx-auto max-w-[1400px] px-5 sm:px-8">
-        {/* Section Heading */}
+    <section id="experience" className="relative isolate py-24 sm:py-32 overflow-hidden">
+      {/* Container */}
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Section Header */}
         <div className="mx-auto max-w-3xl text-center">
           <Reveal>
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-[#D6A84F]/30 bg-[#D6A84F]/10 mb-3">
-              <span className="font-gurmukhi text-xs font-semibold text-[#D6A84F]">ਸਾਡੀ ਵਿਰਾਸਤ</span>
-              <span className="text-[#D6A84F]/50 text-xs">&bull;</span>
-              <span className="text-[10px] font-mono font-bold uppercase tracking-[0.3em] text-[#D6A84F]">
-                The Get To Gether Experience
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#B88952]/40 bg-[#2A1D14]/80 backdrop-blur-md mb-4 shadow-[0_0_20px_rgba(184,137,82,0.15)]">
+              <Compass className="size-3.5 text-[#D8B477]" />
+              <span className="text-[10.5px] font-sans font-bold tracking-[0.3em] text-[#D8B477] uppercase">
+                THE 3D RESTAURANT EXPERIENCE
               </span>
             </div>
           </Reveal>
+
           <Reveal delay={100}>
-            <h2 className="mt-2 font-display text-3xl sm:text-5xl font-semibold text-[#F5F1E8] tracking-tight">
-              A Dining Sanctuary Crafted for Moments Worth Sharing
+            <h2 className="font-display text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[#FFF9EF] leading-tight">
+              A Warm Sanctuary of <span className="text-[#D8B477]">Flavour & Ambiance</span>
             </h2>
-            <span className="font-gurmukhi text-xl sm:text-2xl text-[#D6A84F] font-medium block mt-2">
-              ਪੰਜਾਬੀ ਮਹਿਮਾਨਨਵਾਜ਼ੀ, ਸੁਆਦ ਤੇ ਯਾਦਗਾਰ ਪਲ
-            </span>
           </Reveal>
+
           <Reveal delay={200}>
-            <p className="mt-4 text-sm sm:text-base text-[#A9A59B] leading-relaxed font-light">
-              Rooted on Tibri Road in Gurdaspur, Get To Gether Restaurant brings together authentic
-              hospitality, live charcoal tandoor craftsmanship, and an inviting atmosphere designed
-              for every family gathering and celebration.
+            <p className="mt-4 font-serif italic text-lg sm:text-xl text-[#F3E8D2]/90">
+              &ldquo;Step through our doors and into an atmosphere designed for unforgettable memories.&rdquo;
             </p>
           </Reveal>
         </div>
 
-        {/* ════════════════════════════════════════════════════════════
-            3D FLOATING PHOTO PANELS SHOWCASE
-            Real photographs of Get To Gether Restaurant at staggered Z-depths
-            ════════════════════════════════════════════════════════════ */}
-        <div
-          ref={showcaseRef}
-          className="mt-16 sm:mt-20 perspective-1200 preserve-3d"
-        >
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 preserve-3d">
-            {photoPanels.map((panel, idx) => (
-              <PhotoPanel3D
-                key={panel.id}
-                panel={panel}
-                index={idx}
-                globalMouse={mouseOffset}
-              />
+        {/* ── STEP INSIDE GET TO GETHER: 3 Interactive 3D Virtual Tour Portals ── */}
+        <div className="mt-16 sm:mt-24">
+          <Reveal>
+            <div className="flex flex-col sm:flex-row sm:items-end justify-between border-b border-[#B88952]/25 pb-4 mb-8">
+              <div>
+                <span className="text-xs font-sans font-bold tracking-[0.35em] text-[#B88952] uppercase block mb-1">
+                  INTERACTIVE 3D VIRTUAL TOUR
+                </span>
+                <h3 className="font-display text-2xl sm:text-3xl font-bold text-[#FFF9EF]">
+                  Step Inside Get To Gether
+                </h3>
+              </div>
+              <p className="text-xs sm:text-sm text-[#D3C4AF] mt-2 sm:mt-0 font-light">
+                Hover to preview &bull; Click to glide 3D camera into the space
+              </p>
+            </div>
+          </Reveal>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+            {virtualTourSpaces.map((space, idx) => (
+              <Reveal key={space.number} delay={150 * idx}>
+                <div
+                  onMouseEnter={() => {
+                    setActiveTourIndex(idx);
+                  }}
+                  onMouseLeave={() => setActiveTourIndex(null)}
+                  onClick={() => handleEnter(space.zoneIndex)}
+                  className="group relative cursor-pointer overflow-hidden rounded-2xl border border-[#B88952]/30 bg-[#2A1D14]/85 p-6 backdrop-blur-md transition-all duration-500 hover:border-[#D8B477] hover:bg-[#2A1D14] hover:shadow-[0_20px_45px_rgba(0,0,0,0.8),0_0_30px_rgba(184,137,82,0.3)] hover:-translate-y-2 flex flex-col justify-between min-h-[380px]"
+                >
+                  {/* Background Image Preview with Ambient Overlay */}
+                  <div className="absolute inset-0 -z-10 overflow-hidden">
+                    <img
+                      src={space.image}
+                      alt={space.title}
+                      className="size-full object-cover filter brightness-[0.45] contrast-[1.1] transition-transform duration-700 ease-out group-hover:scale-110 group-hover:brightness-[0.6]"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#17110C] via-[#17110C]/60 to-transparent" />
+                  </div>
+
+                  {/* Top Bar: Number & Tag */}
+                  <div className="flex items-center justify-between">
+                    <span className="font-display text-2xl font-bold text-[#D8B477]">
+                      {space.number}
+                    </span>
+                    <span className="rounded-full border border-[#B88952]/40 bg-[#17110C]/80 px-3 py-1 text-[10px] font-sans font-semibold tracking-wider text-[#F3E8D2] uppercase">
+                      3D SPACE
+                    </span>
+                  </div>
+
+                  {/* Bottom Content */}
+                  <div>
+                    <h4 className="font-display text-xl font-bold text-[#FFF9EF] group-hover:text-[#D8B477] transition-colors leading-snug">
+                      {space.title}
+                    </h4>
+                    <p className="mt-2 text-xs sm:text-sm text-[#F3E8D2]/80 leading-relaxed line-clamp-3">
+                      {space.description}
+                    </p>
+
+                    {/* Interactive CTA */}
+                    <div className="mt-5 inline-flex items-center gap-2 text-xs font-sans font-bold tracking-widest text-[#D8B477] uppercase transition-all duration-300 group-hover:text-[#FFF9EF] group-hover:translate-x-1.5">
+                      <span>ENTER SPACE</span>
+                      <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-1" />
+                    </div>
+                  </div>
+                </div>
+              </Reveal>
             ))}
           </div>
         </div>
 
-        {/* ── Experience Pillars Grid ── */}
-        <div className="mt-20 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {experiencePillars.map((pillar, idx) => (
-            <Reveal
-              key={pillar.title}
-              delay={idx * 70}
-              className="rounded-xl border border-[#D6A84F]/18 bg-[#151A18]/85 p-7 backdrop-blur-md hover:border-[#D6A84F]/40 transition-all duration-300 group"
-            >
-              <div className="flex items-center justify-between">
-                <div className="flex size-12 items-center justify-center rounded-lg bg-[#D6A84F]/10 text-[#D6A84F] group-hover:bg-[#D6A84F] group-hover:text-[#0E1110] transition-colors duration-300">
-                  <pillar.icon className="size-6" />
-                </div>
-                <span className="text-[10px] font-mono tracking-wider uppercase text-[#A9A59B] px-2.5 py-0.5 rounded border border-[#D6A84F]/25">
-                  {pillar.tag}
-                </span>
-              </div>
-              <h3 className="mt-5 font-display text-xl font-semibold text-[#F5F1E8]">
-                {pillar.title}
-              </h3>
-              <p className="mt-2.5 text-xs sm:text-sm text-[#A9A59B] leading-relaxed font-light">
-                {pillar.description}
-              </p>
-            </Reveal>
-          ))}
-        </div>
+        {/* ── Hospitality Pillars Grid (Glassmorphic) ── */}
+        <div className="mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {experiencePillars.map((pillar, idx) => {
+            const Icon = pillar.icon;
+            return (
+              <Reveal key={pillar.title} delay={100 * idx}>
+                <div
+                  onClick={() => handleEnter(pillar.zoneIndex)}
+                  className="group relative cursor-pointer rounded-xl border border-[#B88952]/20 bg-[#17110C]/75 p-6 backdrop-blur-md transition-all duration-300 hover:border-[#B88952]/60 hover:bg-[#2A1D14]/85 hover:shadow-[0_15px_30px_rgba(0,0,0,0.6)]"
+                >
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="flex size-10 items-center justify-center rounded-lg border border-[#B88952]/30 bg-[#2A1D14] text-[#D8B477] group-hover:scale-110 group-hover:border-[#D8B477] transition-all">
+                      <Icon className="size-5" />
+                    </div>
+                    <span className="text-[10px] font-sans font-bold tracking-wider uppercase text-[#B88952]">
+                      {pillar.tag}
+                    </span>
+                  </div>
 
-        {/* Direct Quote Banner */}
-        <Reveal delay={400} className="mt-16 text-center">
-          <div className="mx-auto max-w-4xl p-8 rounded-2xl border border-[#D6A84F]/30 bg-[#18201C]/90 backdrop-blur-md relative overflow-hidden shadow-2xl">
-            <div className="relative z-10">
-              <p className="font-serif italic text-xl sm:text-2xl text-[#D6A84F] font-light">
-                &ldquo;Whether meeting friends for coffee at the lounge, enjoying a relaxed family
-                Sunday dinner, or celebrating a milestone anniversary, Get To Gether welcomes you
-                with open arms and memorable flavours.&rdquo;
-              </p>
-              <p className="mt-4 text-xs tracking-widest uppercase text-[#A9A59B]">
-                — {DAWAT_INFO.name}, Gurdaspur
-              </p>
-            </div>
-          </div>
-        </Reveal>
+                  <h4 className="font-display text-lg font-bold text-[#FFF9EF] group-hover:text-[#D8B477] transition-colors">
+                    {pillar.title}
+                  </h4>
+                  <p className="mt-2 text-xs sm:text-sm text-[#D3C4AF] leading-relaxed">
+                    {pillar.description}
+                  </p>
+                </div>
+              </Reveal>
+            );
+          })}
+        </div>
       </div>
     </section>
-  );
-}
-
-// ── 3D Floating Photo Panel with Depth, Perspective & Thickness ──
-function PhotoPanel3D({
-  panel,
-  index,
-  globalMouse,
-}: {
-  panel: (typeof photoPanels)[0];
-  index: number;
-  globalMouse: { x: number; y: number };
-}) {
-  const [isHovered, setIsHovered] = useState(false);
-  const cardRef = useRef<HTMLDivElement>(null);
-  const [localTilt, setLocalTilt] = useState({ x: 0, y: 0 });
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!cardRef.current) return;
-    const rect = cardRef.current.getBoundingClientRect();
-    const x = (e.clientX - (rect.left + rect.width / 2)) / (rect.width / 2);
-    const y = (e.clientY - (rect.top + rect.height / 2)) / (rect.height / 2);
-    setLocalTilt({ x: y * -9, y: x * 9 });
-  };
-
-  const currentZ = isHovered ? panel.baseZ + 32 : panel.baseZ;
-  const parallaxX = globalMouse.x * (index % 2 === 0 ? 8 : -8);
-  const parallaxY = globalMouse.y * 6;
-
-  return (
-    <Reveal delay={index * 100}>
-      <div
-        ref={cardRef}
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseMove={handleMouseMove}
-        onMouseLeave={() => {
-          setIsHovered(false);
-          setLocalTilt({ x: 0, y: 0 });
-        }}
-        style={{
-          transform: `translate3d(${parallaxX}px, ${parallaxY}px, ${currentZ}px) rotateX(${
-            localTilt.x + globalMouse.y * -3
-          }deg) rotateY(${localTilt.y + globalMouse.x * 4}deg)`,
-          boxShadow: isHovered
-            ? "0 25px 50px -10px rgba(0, 0, 0, 0.95), 0 0 35px rgba(214, 168, 79, 0.25)"
-            : "0 15px 35px -8px rgba(0, 0, 0, 0.85), 0 0 15px rgba(0, 0, 0, 0.5)",
-          transition: isHovered
-            ? "transform 0.18s ease-out, box-shadow 0.25s ease"
-            : "transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease",
-        }}
-        className="group relative overflow-hidden rounded-2xl border-2 border-[#D6A84F]/25 bg-[#151A18] p-3 backdrop-blur-md will-change-transform preserve-3d cursor-pointer"
-      >
-        {/* Real Photo with Depth Zoom */}
-        <div className="relative aspect-[3/4] overflow-hidden rounded-xl bg-black/80">
-          <img
-            src={panel.image}
-            alt={panel.title}
-            className="size-full object-cover transition-transform duration-700 ease-out group-hover:scale-108 filter contrast-[1.04]"
-            loading="lazy"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-75 group-hover:opacity-60 transition-opacity duration-300" />
-
-          {/* Floating Tag (Elevated Z: +20px) */}
-          <div
-            style={{ transform: "translateZ(20px)" }}
-            className="absolute top-3 left-3 preserve-3d"
-          >
-            <span className="rounded-full border border-[#D6A84F]/40 bg-[#0E1110]/80 px-2.5 py-0.5 text-[9px] font-mono uppercase tracking-wider text-[#D6A84F] backdrop-blur-md">
-              {panel.tag}
-            </span>
-          </div>
-
-          {/* Bottom Captions (Elevated Z: +25px) */}
-          <div
-            style={{ transform: "translateZ(25px)" }}
-            className="absolute bottom-3 left-3 right-3 preserve-3d"
-          >
-            <h4 className="font-serif text-base font-bold text-[#F5F1E8] group-hover:text-[#D6A84F] transition-colors">
-              {panel.title}
-            </h4>
-            <p className="mt-1 text-[11px] text-[#A9A59B] line-clamp-2 leading-relaxed font-light">
-              {panel.subtitle}
-            </p>
-          </div>
-        </div>
-      </div>
-    </Reveal>
   );
 }
