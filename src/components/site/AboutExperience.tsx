@@ -52,8 +52,8 @@ const photoPanels = [
   {
     id: "p1",
     title: "Warm Dining Sanctuary",
-    subtitle: "Plush leather seating, ambient lighting & intimate table settings",
-    image: REAL_PHOTOS.gurdaspurDiningCustomer,
+    subtitle: "Plush leather booth seating, glowing chandeliers & warm intimate dining settings",
+    image: REAL_PHOTOS.luxuryDiningLounge,
     baseZ: 25,
     tag: "Dining Lounge",
   },
@@ -115,35 +115,42 @@ export function AboutExperience() {
   }, []);
 
   return (
-    <section id="about" className="relative bg-[#0c0a08] text-[#f7f2ea] py-24 sm:py-32 overflow-hidden">
+    <section id="about" className="relative bg-[#0E1110] text-[#F5F1E8] py-24 sm:py-32 overflow-hidden">
       {/* Background ambient glow */}
       <div
         aria-hidden="true"
-        className="absolute top-1/2 left-0 -translate-y-1/2 size-96 rounded-full bg-[#dfb76c]/5 blur-3xl pointer-events-none"
+        className="absolute top-1/2 left-0 -translate-y-1/2 size-96 rounded-full bg-[#D6A84F]/5 blur-3xl pointer-events-none"
       />
       <div
         aria-hidden="true"
-        className="absolute top-1/4 right-0 size-80 rounded-full bg-amber-600/5 blur-3xl pointer-events-none"
+        className="absolute top-1/4 right-0 size-80 rounded-full bg-[#18201C]/50 blur-3xl pointer-events-none"
       />
 
       <div className="mx-auto max-w-[1400px] px-5 sm:px-8">
         {/* Section Heading */}
         <div className="mx-auto max-w-3xl text-center">
           <Reveal>
-            <p className="text-[10px] font-mono font-bold uppercase tracking-[0.3em] text-[#dfb76c]">
-              The Get To Gether Experience
-            </p>
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-[#D6A84F]/30 bg-[#D6A84F]/10 mb-3">
+              <span className="font-gurmukhi text-xs font-semibold text-[#D6A84F]">ਸਾਡੀ ਵਿਰਾਸਤ</span>
+              <span className="text-[#D6A84F]/50 text-xs">&bull;</span>
+              <span className="text-[10px] font-mono font-bold uppercase tracking-[0.3em] text-[#D6A84F]">
+                The Get To Gether Experience
+              </span>
+            </div>
           </Reveal>
           <Reveal delay={100}>
-            <h2 className="mt-3 font-display text-3xl sm:text-5xl font-semibold text-white tracking-tight">
+            <h2 className="mt-2 font-display text-3xl sm:text-5xl font-semibold text-[#F5F1E8] tracking-tight">
               A Dining Sanctuary Crafted for Moments Worth Sharing
             </h2>
+            <span className="font-gurmukhi text-xl sm:text-2xl text-[#D6A84F] font-medium block mt-2">
+              ਪੰਜਾਬੀ ਮਹਿਮਾਨਨਵਾਜ਼ੀ, ਸੁਆਦ ਤੇ ਯਾਦਗਾਰ ਪਲ
+            </span>
           </Reveal>
           <Reveal delay={200}>
-            <p className="mt-4 text-sm sm:text-base text-[#cfc5b6] leading-relaxed font-light">
-              Rooted on Tibri Road in Gurdaspur, Get To Gether Restaurant brings together timeless
-              hospitality, multi-cuisine culinary craftsmanship, and an inviting atmosphere designed
-              for every occasion.
+            <p className="mt-4 text-sm sm:text-base text-[#A9A59B] leading-relaxed font-light">
+              Rooted on Tibri Road in Gurdaspur, Get To Gether Restaurant brings together authentic
+              hospitality, live charcoal tandoor craftsmanship, and an inviting atmosphere designed
+              for every family gathering and celebration.
             </p>
           </Reveal>
         </div>
@@ -174,20 +181,20 @@ export function AboutExperience() {
             <Reveal
               key={pillar.title}
               delay={idx * 70}
-              className="rounded-xl border border-[#dfb76c]/15 bg-[#14100c]/80 p-7 backdrop-blur-md hover:border-[#dfb76c]/40 transition-all duration-300 group"
+              className="rounded-xl border border-[#D6A84F]/18 bg-[#151A18]/85 p-7 backdrop-blur-md hover:border-[#D6A84F]/40 transition-all duration-300 group"
             >
               <div className="flex items-center justify-between">
-                <div className="flex size-12 items-center justify-center rounded-lg bg-[#dfb76c]/10 text-[#dfb76c] group-hover:bg-[#dfb76c] group-hover:text-black transition-colors duration-300">
+                <div className="flex size-12 items-center justify-center rounded-lg bg-[#D6A84F]/10 text-[#D6A84F] group-hover:bg-[#D6A84F] group-hover:text-[#0E1110] transition-colors duration-300">
                   <pillar.icon className="size-6" />
                 </div>
-                <span className="text-[10px] font-mono tracking-wider uppercase text-[#a89782] px-2.5 py-0.5 rounded border border-[#dfb76c]/20">
+                <span className="text-[10px] font-mono tracking-wider uppercase text-[#A9A59B] px-2.5 py-0.5 rounded border border-[#D6A84F]/25">
                   {pillar.tag}
                 </span>
               </div>
-              <h3 className="mt-5 font-display text-xl font-semibold text-white">
+              <h3 className="mt-5 font-display text-xl font-semibold text-[#F5F1E8]">
                 {pillar.title}
               </h3>
-              <p className="mt-2.5 text-xs sm:text-sm text-[#bdae9c] leading-relaxed font-light">
+              <p className="mt-2.5 text-xs sm:text-sm text-[#A9A59B] leading-relaxed font-light">
                 {pillar.description}
               </p>
             </Reveal>
@@ -196,14 +203,14 @@ export function AboutExperience() {
 
         {/* Direct Quote Banner */}
         <Reveal delay={400} className="mt-16 text-center">
-          <div className="mx-auto max-w-4xl p-8 rounded-2xl border border-[#dfb76c]/30 bg-[#14100c]/90 backdrop-blur-md relative overflow-hidden shadow-2xl">
+          <div className="mx-auto max-w-4xl p-8 rounded-2xl border border-[#D6A84F]/30 bg-[#18201C]/90 backdrop-blur-md relative overflow-hidden shadow-2xl">
             <div className="relative z-10">
-              <p className="font-serif italic text-xl sm:text-2xl text-[#dfb76c] font-light">
+              <p className="font-serif italic text-xl sm:text-2xl text-[#D6A84F] font-light">
                 &ldquo;Whether meeting friends for coffee at the lounge, enjoying a relaxed family
                 Sunday dinner, or celebrating a milestone anniversary, Get To Gether welcomes you
                 with open arms and memorable flavours.&rdquo;
               </p>
-              <p className="mt-4 text-xs tracking-widest uppercase text-[#cfc5b6]">
+              <p className="mt-4 text-xs tracking-widest uppercase text-[#A9A59B]">
                 — {DAWAT_INFO.name}, Gurdaspur
               </p>
             </div>
@@ -255,13 +262,13 @@ function PhotoPanel3D({
             localTilt.x + globalMouse.y * -3
           }deg) rotateY(${localTilt.y + globalMouse.x * 4}deg)`,
           boxShadow: isHovered
-            ? "0 25px 50px -10px rgba(0, 0, 0, 0.95), 0 0 35px rgba(223, 183, 108, 0.28)"
+            ? "0 25px 50px -10px rgba(0, 0, 0, 0.95), 0 0 35px rgba(214, 168, 79, 0.25)"
             : "0 15px 35px -8px rgba(0, 0, 0, 0.85), 0 0 15px rgba(0, 0, 0, 0.5)",
           transition: isHovered
             ? "transform 0.18s ease-out, box-shadow 0.25s ease"
             : "transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease",
         }}
-        className="group relative overflow-hidden rounded-2xl border-2 border-[#dfb76c]/30 bg-[#16120e] p-3 backdrop-blur-md will-change-transform preserve-3d cursor-pointer"
+        className="group relative overflow-hidden rounded-2xl border-2 border-[#D6A84F]/25 bg-[#151A18] p-3 backdrop-blur-md will-change-transform preserve-3d cursor-pointer"
       >
         {/* Real Photo with Depth Zoom */}
         <div className="relative aspect-[3/4] overflow-hidden rounded-xl bg-black/80">
@@ -278,7 +285,7 @@ function PhotoPanel3D({
             style={{ transform: "translateZ(20px)" }}
             className="absolute top-3 left-3 preserve-3d"
           >
-            <span className="rounded-full border border-[#dfb76c]/40 bg-black/80 px-2.5 py-0.5 text-[9px] font-mono uppercase tracking-wider text-[#dfb76c] backdrop-blur-md">
+            <span className="rounded-full border border-[#D6A84F]/40 bg-[#0E1110]/80 px-2.5 py-0.5 text-[9px] font-mono uppercase tracking-wider text-[#D6A84F] backdrop-blur-md">
               {panel.tag}
             </span>
           </div>
@@ -288,10 +295,10 @@ function PhotoPanel3D({
             style={{ transform: "translateZ(25px)" }}
             className="absolute bottom-3 left-3 right-3 preserve-3d"
           >
-            <h4 className="font-serif text-base font-bold text-[#f7f2ea] group-hover:text-[#dfb76c] transition-colors">
+            <h4 className="font-serif text-base font-bold text-[#F5F1E8] group-hover:text-[#D6A84F] transition-colors">
               {panel.title}
             </h4>
-            <p className="mt-1 text-[11px] text-[#bdae9c] line-clamp-2 leading-relaxed font-light">
+            <p className="mt-1 text-[11px] text-[#A9A59B] line-clamp-2 leading-relaxed font-light">
               {panel.subtitle}
             </p>
           </div>

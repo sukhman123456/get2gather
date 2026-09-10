@@ -36,11 +36,11 @@ export function MenuPromotionalPoster({ onOpenOriginalMenu }: MenuPromotionalPos
   ];
 
   return (
-    <section className="relative bg-[#0d0f14] py-20 sm:py-28 overflow-hidden border-y border-gold/15">
+    <section className="relative bg-[#0E1110] py-20 sm:py-28 overflow-hidden border-y border-[#D6A84F]/15">
       {/* Background soft glow */}
       <div
         aria-hidden="true"
-        className="absolute -right-32 top-1/2 -translate-y-1/2 size-[450px] rounded-full bg-gold/10 blur-[130px] pointer-events-none"
+        className="absolute -right-32 top-1/2 -translate-y-1/2 size-[450px] rounded-full bg-[#D6A84F]/5 blur-[130px] pointer-events-none"
       />
 
       <div className="mx-auto max-w-[1400px] px-5 sm:px-8">
@@ -49,7 +49,7 @@ export function MenuPromotionalPoster({ onOpenOriginalMenu }: MenuPromotionalPos
           <div className="lg:col-span-5 flex justify-center">
             <Reveal className="group relative max-w-sm sm:max-w-md w-full">
               {/* Poster frame with gold accent border and realistic shadow */}
-              <div className="relative overflow-hidden rounded-2xl border-2 border-gold/40 bg-black/70 p-2.5 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)] card-3d">
+              <div className="relative overflow-hidden rounded-2xl border border-[#D6A84F]/30 bg-[#151A18]/80 p-2.5 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)] card-3d">
                 <img
                   src={REAL_PHOTOS.menuPosterBreakfast}
                   alt="Real printed Get 2 Gather Breakfast &amp; Special Menu Poster"
@@ -62,7 +62,7 @@ export function MenuPromotionalPoster({ onOpenOriginalMenu }: MenuPromotionalPos
                   onClick={() => onOpenOriginalMenu(0)}
                   className="absolute inset-0 flex items-center justify-center bg-black/60 opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100 rounded-2xl"
                 >
-                  <span className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-xs font-semibold uppercase tracking-wider text-black shadow-xl">
+                  <span className="inline-flex items-center gap-2 rounded-full bg-[#D6A84F] hover:bg-[#F1D08A] px-5 py-2.5 text-xs font-semibold uppercase tracking-wider text-[#0E1110] shadow-xl">
                     <Sparkles className="size-4" />
                     Click to View Full Poster
                   </span>
@@ -70,7 +70,7 @@ export function MenuPromotionalPoster({ onOpenOriginalMenu }: MenuPromotionalPos
               </div>
 
               {/* Verified badge pill */}
-              <div className="absolute -bottom-4 right-4 rounded-full border border-gold/40 bg-black/90 px-4 py-1.5 text-xs font-semibold text-gold shadow-lg backdrop-blur-md">
+              <div className="absolute -bottom-4 right-4 rounded-full border border-[#D6A84F]/40 bg-[#151A18]/95 px-4 py-1.5 text-xs font-semibold text-[#D6A84F] shadow-lg backdrop-blur-md">
                 ✓ Authentic Printed Menu
               </div>
             </Reveal>
@@ -79,14 +79,14 @@ export function MenuPromotionalPoster({ onOpenOriginalMenu }: MenuPromotionalPos
           {/* Right Column: Promotional Details & Offerings */}
           <div className="lg:col-span-7">
             <Reveal>
-              <div className="inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-3.5 py-1 text-xs font-bold tracking-widest uppercase text-gold">
-                <Flame className="size-3.5 text-amber-400" />
+              <div className="inline-flex items-center gap-2 rounded-full border border-[#D6A84F]/30 bg-[#D6A84F]/10 px-3.5 py-1 text-xs font-bold tracking-widest uppercase text-[#D6A84F]">
+                <Flame className="size-3.5 text-[#D6A84F]" />
                 Featured Promotion
               </div>
             </Reveal>
 
             <Reveal delay={100}>
-              <h2 className="mt-4 font-display text-4xl sm:text-5xl font-bold tracking-tight text-white leading-tight">
+              <h2 className="mt-4 font-display text-4xl sm:text-5xl font-bold tracking-tight text-[#F5F1E8] leading-tight">
                 GET 2 GATHER
                 <span className="block gold-gradient-text text-3xl sm:text-4xl mt-1">
                   BREAKFAST &amp; CHEF SPECIALS
@@ -95,7 +95,7 @@ export function MenuPromotionalPoster({ onOpenOriginalMenu }: MenuPromotionalPos
             </Reveal>
 
             <Reveal delay={150}>
-              <p className="mt-5 text-base sm:text-lg text-white/80 leading-relaxed font-light">
+              <p className="mt-5 text-base sm:text-lg text-[#A9A59B] leading-relaxed font-light">
                 Start your mornings or recharge your afternoons with Get To Gether&apos;s special
                 breakfast spreads, oven-baked pizzas, vibrant mocktails, and fresh clay oven
                 tandoori starters.
@@ -108,20 +108,20 @@ export function MenuPromotionalPoster({ onOpenOriginalMenu }: MenuPromotionalPos
                 {featuredOfferings.map((feat) => (
                   <div
                     key={feat.title}
-                    className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-4 rounded-xl border border-white/10 bg-white/[0.03] p-4 transition-colors hover:border-gold/30 hover:bg-white/[0.06]"
+                    className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-4 rounded-xl border border-[#D6A84F]/15 bg-[#151A18]/80 p-4 transition-colors hover:border-[#D6A84F]/40 hover:bg-[#18201C]/80"
                   >
                     <div className="flex items-start gap-3">
-                      <div className="flex size-6 shrink-0 items-center justify-center rounded-full bg-gold/20 text-gold mt-0.5">
+                      <div className="flex size-6 shrink-0 items-center justify-center rounded-full bg-[#D6A84F]/15 text-[#D6A84F] mt-0.5">
                         <Check className="size-3.5" />
                       </div>
                       <div>
-                        <h3 className="font-display text-base font-semibold text-white">
+                        <h3 className="font-display text-base font-semibold text-[#F5F1E8]">
                           {feat.title}
                         </h3>
-                        <p className="text-xs text-white/60">{feat.items}</p>
+                        <p className="text-xs text-[#A9A59B]">{feat.items}</p>
                       </div>
                     </div>
-                    <span className="self-end sm:self-center font-mono text-xs font-bold text-gold bg-gold/10 px-2.5 py-1 rounded-md border border-gold/20 shrink-0">
+                    <span className="self-end sm:self-center font-mono text-xs font-bold text-[#D6A84F] bg-[#D6A84F]/10 px-2.5 py-1 rounded-md border border-[#D6A84F]/20 shrink-0">
                       {feat.price}
                     </span>
                   </div>
@@ -134,7 +134,7 @@ export function MenuPromotionalPoster({ onOpenOriginalMenu }: MenuPromotionalPos
               <div className="mt-9 flex flex-wrap items-center gap-4">
                 <a
                   href="#menu"
-                  className="inline-flex items-center gap-2 rounded-md bg-gradient-to-r from-primary to-accent px-8 py-3.5 text-sm font-semibold tracking-wider uppercase text-black shadow-lg shadow-primary/20 transition-all hover:scale-105 active:scale-95"
+                  className="inline-flex items-center gap-2 rounded-md bg-[#D6A84F] hover:bg-[#F1D08A] px-8 py-3.5 text-sm font-semibold tracking-wider uppercase text-[#0E1110] shadow-[0_4px_20px_rgba(214,168,79,0.25)] transition-all hover:scale-105 active:scale-95"
                 >
                   Explore Menu
                   <ArrowUpRight className="size-4" />
@@ -143,7 +143,7 @@ export function MenuPromotionalPoster({ onOpenOriginalMenu }: MenuPromotionalPos
                 <button
                   type="button"
                   onClick={() => onOpenOriginalMenu(0)}
-                  className="inline-flex items-center gap-2 rounded-md border border-white/20 bg-black/40 px-6 py-3.5 text-sm font-semibold tracking-wider uppercase text-white hover:border-gold hover:text-gold transition-colors"
+                  className="inline-flex items-center gap-2 rounded-md border border-[#D6A84F]/35 bg-[#151A18] px-6 py-3.5 text-sm font-semibold tracking-wider uppercase text-[#F5F1E8] hover:border-[#D6A84F] hover:text-[#D6A84F] hover:bg-[#18201C] transition-colors"
                 >
                   View Original Menu
                 </button>

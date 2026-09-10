@@ -86,15 +86,15 @@ export function GallerySection({ onOpenPhoto }: GallerySectionProps) {
         baseZ: 12,
         hoverZ: 55,
         shadow: "shadow-[0_15px_35px_rgba(0,0,0,0.85)]",
-        border: "border-white/15",
+        border: "border-[#D6A84F]/18",
         parallaxMultiplier: 1.0,
       };
     } else if (tier === 1) {
       return {
         baseZ: 36,
         hoverZ: 70,
-        shadow: "shadow-[0_25px_50px_rgba(0,0,0,0.92),0_0_30px_rgba(201,147,82,0.18)]",
-        border: "border-gold/35",
+        shadow: "shadow-[0_25px_50px_rgba(0,0,0,0.92),0_0_30px_rgba(214,168,79,0.2)]",
+        border: "border-[#D6A84F]/35",
         parallaxMultiplier: 1.4,
       };
     } else {
@@ -102,7 +102,7 @@ export function GallerySection({ onOpenPhoto }: GallerySectionProps) {
         baseZ: -10,
         hoverZ: 45,
         shadow: "shadow-[0_10px_25px_rgba(0,0,0,0.75)]",
-        border: "border-white/10",
+        border: "border-[#D6A84F]/12",
         parallaxMultiplier: 0.7,
       };
     }
@@ -117,11 +117,11 @@ export function GallerySection({ onOpenPhoto }: GallerySectionProps) {
       {/* Warm volumetric background lighting */}
       <div
         aria-hidden="true"
-        className="absolute top-1/3 right-10 size-[500px] rounded-full bg-gold/5 blur-[160px] pointer-events-none -z-10"
+        className="absolute top-1/3 right-10 size-[500px] rounded-full bg-[#D6A84F]/5 blur-[160px] pointer-events-none -z-10"
       />
       <div
         aria-hidden="true"
-        className="absolute bottom-1/4 left-10 size-[400px] rounded-full bg-amber-600/5 blur-[140px] pointer-events-none -z-10"
+        className="absolute bottom-1/4 left-10 size-[400px] rounded-full bg-[#18201C]/40 blur-[140px] pointer-events-none -z-10"
       />
 
       <div className="mx-auto max-w-[1400px] px-5 sm:px-8 preserve-3d">
@@ -131,12 +131,12 @@ export function GallerySection({ onOpenPhoto }: GallerySectionProps) {
             <p className="eyebrow">Visual Tour</p>
           </Reveal>
           <Reveal delay={100}>
-            <h2 className="mt-4 font-display text-4xl sm:text-5xl font-bold tracking-tight text-white">
+            <h2 className="mt-4 font-display text-4xl sm:text-5xl font-bold tracking-tight text-[#F5F1E8]">
               Moments Captured at Get To Gether
             </h2>
           </Reveal>
           <Reveal delay={200}>
-            <p className="mt-5 text-base sm:text-lg text-muted-foreground leading-relaxed">
+            <p className="mt-5 text-base sm:text-lg text-[#A9A59B] leading-relaxed font-light">
               Explore 100% authentic photography from Get To Gether Restaurant Gurdaspur: our
               coffee lounge, bamboo garden terrace, mandala art dining, and charcoal tandoor
               feasts.
@@ -154,8 +154,8 @@ export function GallerySection({ onOpenPhoto }: GallerySectionProps) {
                 onClick={() => setSelectedCat(cat)}
                 className={`px-5 py-2 rounded-full text-xs font-semibold tracking-wider uppercase transition-all duration-300 ${
                   selectedCat === cat
-                    ? "bg-primary text-black shadow-lg shadow-primary/25 scale-105"
-                    : "bg-white/5 text-white/70 hover:bg-white/10 hover:text-white border border-white/10"
+                    ? "bg-[#D6A84F] text-[#0E1110] shadow-lg shadow-[#D6A84F]/25 hover:bg-[#F1D08A] scale-105"
+                    : "bg-[#18201C] text-[#A9A59B] hover:bg-[#151A18] hover:text-[#F5F1E8] border border-[#D6A84F]/20"
                 }`}
               >
                 {cat}
@@ -223,7 +223,7 @@ function GalleryCard3D({
           transform: `translate3d(${parallaxX}px, ${parallaxY}px, ${currentZ}px)`,
           transition: "transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease",
         }}
-        className={`group relative cursor-pointer overflow-hidden rounded-2xl border ${depth.border} bg-black/50 break-inside-avoid ${depth.shadow} preserve-3d will-change-transform`}
+        className={`group relative cursor-pointer overflow-hidden rounded-2xl border ${depth.border} bg-[#151A18]/80 break-inside-avoid ${depth.shadow} preserve-3d will-change-transform`}
       >
         {/* Photo with 3D Depth Zoom */}
         <div className="overflow-hidden">
@@ -243,7 +243,7 @@ function GalleryCard3D({
           style={{ transform: "translateZ(20px)" }}
           className="absolute top-4 left-4 preserve-3d"
         >
-          <span className="rounded-full border border-gold/40 bg-black/75 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-gold backdrop-blur-md shadow-lg">
+          <span className="rounded-full border border-[#D6A84F]/40 bg-[#0E1110]/80 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-[#D6A84F] backdrop-blur-md shadow-lg">
             {photo.category}
           </span>
         </div>
@@ -251,9 +251,9 @@ function GalleryCard3D({
         {/* Expand Icon (Elevated Z: +25px) */}
         <div
           style={{ transform: "translateZ(25px)" }}
-          className="absolute top-4 right-4 size-8 rounded-full bg-black/75 flex items-center justify-center text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100 backdrop-blur-md border border-white/25 shadow-lg"
+          className="absolute top-4 right-4 size-8 rounded-full bg-[#0E1110]/80 flex items-center justify-center text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100 backdrop-blur-md border border-[#D6A84F]/30 shadow-lg"
         >
-          <Maximize2 className="size-4 text-gold" />
+          <Maximize2 className="size-4 text-[#D6A84F]" />
         </div>
 
         {/* Bottom Captions (Elevated Z: +24px) */}
@@ -261,10 +261,10 @@ function GalleryCard3D({
           style={{ transform: "translateZ(24px)" }}
           className="absolute bottom-0 inset-x-0 p-5 transition-transform duration-300 preserve-3d"
         >
-          <h3 className="font-display text-lg sm:text-xl font-bold text-white group-hover:text-primary transition-colors">
+          <h3 className="font-display text-lg sm:text-xl font-bold text-[#F5F1E8] group-hover:text-[#D6A84F] transition-colors">
             {photo.title}
           </h3>
-          <p className="mt-1 text-xs text-white/75 line-clamp-2 leading-relaxed font-light">
+          <p className="mt-1 text-xs text-[#A9A59B] line-clamp-2 leading-relaxed font-light">
             {photo.subtitle}
           </p>
         </div>

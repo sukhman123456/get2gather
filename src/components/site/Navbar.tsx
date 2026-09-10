@@ -4,13 +4,13 @@ import { DAWAT_INFO } from "@/lib/dawatData";
 import { Logo3DEmblem } from "./Logo3DEmblem";
 
 const navLinks = [
-  { label: "Home", href: "#top" },
-  { label: "About", href: "#about" },
-  { label: "Menu", href: "#menu" },
-  { label: "Coffee", href: "#coffee" },
-  { label: "Gallery", href: "#gallery" },
-  { label: "Reserve", href: "#reservation" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", punjabi: "ਮੁੱਖ ਪੰਨਾ", href: "#top" },
+  { label: "About", punjabi: "ਸਾਡੇ ਬਾਰੇ", href: "#about" },
+  { label: "Menu", punjabi: "ਮੀਨੂ", href: "#menu" },
+  { label: "Coffee", punjabi: "ਕੈਫੇ", href: "#coffee" },
+  { label: "Gallery", punjabi: "ਗੈਲਰੀ", href: "#gallery" },
+  { label: "Reserve", punjabi: "ਬੁਕਿੰਗ", href: "#reservation" },
+  { label: "Contact", punjabi: "ਸੰਪਰਕ", href: "#contact" },
 ];
 
 export function Navbar() {
@@ -33,12 +33,12 @@ export function Navbar() {
       <header
         className={`fixed inset-x-0 top-0 z-40 transition-all duration-300 ${
           isScrolled
-            ? "glass-dark py-3 shadow-2xl shadow-black/80"
-            : "bg-gradient-to-b from-black/90 via-black/50 to-transparent py-4 sm:py-5"
+            ? "glass-dark py-2.5 sm:py-3 shadow-2xl shadow-black/80"
+            : "bg-gradient-to-b from-[#0E1110]/95 via-[#0E1110]/60 to-transparent py-3 sm:py-4"
         }`}
       >
         <div className="mx-auto flex max-w-[1400px] items-center justify-between px-4 sm:px-8">
-          {/* ── Brand with Official 3D Logo Emblem ── */}
+          {/* ── Brand with Official 3D Logo Emblem & Punjabi Monogram ── */}
           <a
             href="#top"
             className="group flex items-center gap-3 transition-transform duration-300 hover:scale-[1.02]"
@@ -47,26 +47,43 @@ export function Navbar() {
             {/* Crisp 3D Logo Emblem */}
             <Logo3DEmblem size="nav" enableMouseParallax={false} />
 
-            {/* Brand Title */}
+            {/* Royal Gurmukhi Monogram Badge */}
+            <div className="hidden sm:flex size-9 items-center justify-center rounded-lg border border-[#D6A84F]/60 bg-gradient-to-b from-[#2A0E12] via-[#1A0A0C] to-[#0E1110] shadow-[0_0_15px_rgba(214,168,79,0.25)] text-[#D6A84F] font-gurmukhi font-bold text-base select-none shrink-0">
+              ਗ
+            </div>
+
+            {/* Brand Title with Authentic Punjabi Identity */}
             <div className="flex flex-col">
-              <span className="font-display text-base sm:text-xl font-bold tracking-wider text-white gold-gradient-text uppercase leading-tight">
-                Get To Gether
-              </span>
-              <span className="text-[9px] uppercase tracking-[0.25em] text-white/70 font-mono">
-                Restaurant &bull; Gurdaspur
+              <div className="flex items-baseline gap-1.5">
+                <span className="font-display text-base sm:text-xl font-bold tracking-wider text-[#F5F1E8] gold-gradient-text uppercase leading-tight">
+                  Get To Gether
+                </span>
+                <span className="font-gurmukhi text-[11px] sm:text-xs font-semibold text-[#D6A84F] tracking-normal">
+                  ਗੈੱਟ ਟੂਗੈਦਰ
+                </span>
+              </div>
+              <span className="text-[9px] uppercase tracking-[0.22em] text-[#A9A59B] font-mono flex items-center gap-1">
+                <span>Restaurant</span>
+                <span>&bull;</span>
+                <span>Gurdaspur (ਗੁਰਦਾਸਪੁਰ)</span>
               </span>
             </div>
           </a>
 
-          {/* ── Desktop Nav Links ── */}
-          <nav className="hidden lg:flex items-center gap-7">
+          {/* ── Desktop Nav Links with Elegant Punjabi Subscript ── */}
+          <nav className="hidden lg:flex items-center gap-6 xl:gap-7">
             {navLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
-                className="text-xs font-semibold uppercase tracking-widest text-white/80 transition-colors duration-200 hover:text-gold"
+                className="group flex flex-col items-center transition-colors duration-200"
               >
-                {link.label}
+                <span className="text-xs font-semibold uppercase tracking-widest text-[#F5F1E8]/90 group-hover:text-gold transition-colors">
+                  {link.label}
+                </span>
+                <span className="font-gurmukhi text-[9px] font-medium text-[#D6A84F]/75 group-hover:text-gold transition-colors -mt-0.5">
+                  {link.punjabi}
+                </span>
               </a>
             ))}
           </nav>
@@ -76,20 +93,29 @@ export function Navbar() {
             {/* Phone link */}
             <a
               href={DAWAT_INFO.phoneHref}
-              className="flex items-center gap-1.5 text-xs text-white/80 hover:text-gold transition px-2.5 py-1 font-mono"
+              className="flex items-center gap-1.5 text-xs text-[#F5F1E8]/85 hover:text-gold transition px-2 py-1 font-mono"
               title="Call Get To Gether Restaurant"
             >
               <Phone className="size-3.5 text-gold" />
               <span>{DAWAT_INFO.phoneDisplay}</span>
             </a>
 
+            {/* View Menu quick link */}
+            <a
+              href="#menu"
+              className="hidden xl:inline-flex items-center gap-1 rounded-md border border-[#D6A84F]/40 bg-[#151A18] px-3 py-2 text-[11px] font-semibold uppercase tracking-wider text-[#D6A84F] hover:bg-[#18201C] hover:border-[#D6A84F] transition"
+            >
+              <span>ਮੀਨੂ</span>
+              <span className="text-[10px] text-[#A9A59B]">&bull; View Menu</span>
+            </a>
+
             {/* Book a Table */}
             <a
               href="#reservation"
-              className="inline-flex items-center gap-2 rounded-md bg-[#dfb76c] px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-[#18120a] shadow-md shadow-black/40 transition-all duration-300 hover:bg-[#ecd299] hover:scale-105 active:scale-95"
+              className="inline-flex items-center gap-2 rounded-md bg-[#D6A84F] px-4 sm:px-5 py-2 sm:py-2.5 text-xs font-bold uppercase tracking-wider text-[#0E1110] shadow-md shadow-black/40 transition-all duration-300 hover:bg-[#F1D08A] hover:shadow-[0_0_20px_rgba(214,168,79,0.35)] hover:scale-105 active:scale-95"
             >
-              <Calendar className="size-3.5 text-[#18120a]" />
-              <span>BOOK A TABLE</span>
+              <Calendar className="size-3.5 text-[#0E1110]" />
+              <span>ਟੇਬਲ ਬੁੱਕ ਕਰੋ &bull; BOOK TABLE</span>
             </a>
           </div>
 
@@ -98,7 +124,7 @@ export function Navbar() {
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle navigation menu"
-            className="flex lg:hidden size-10 items-center justify-center rounded-lg border border-white/20 bg-black/40 text-white transition hover:bg-white/10"
+            className="flex lg:hidden size-10 items-center justify-center rounded-lg border border-[#D6A84F]/25 bg-[#151A18]/80 text-[#F5F1E8] transition hover:bg-[#18201C]"
           >
             {mobileMenuOpen ? <X className="size-5" /> : <Menu className="size-5" />}
           </button>
@@ -110,10 +136,10 @@ export function Navbar() {
         <div
           role="dialog"
           aria-modal="true"
-          className="fixed inset-0 z-50 flex flex-col bg-black/95 backdrop-blur-2xl p-6 lg:hidden"
+          className="fixed inset-0 z-50 flex flex-col bg-[#0E1110]/98 backdrop-blur-2xl p-6 lg:hidden"
         >
           {/* Top close bar with Logo */}
-          <div className="flex items-center justify-between pb-6 border-b border-white/10">
+          <div className="flex items-center justify-between pb-6 border-b border-[#D6A84F]/15">
             <div className="flex items-center gap-3">
               <Logo3DEmblem size="nav" enableMouseParallax={false} />
               <div>
@@ -129,32 +155,33 @@ export function Navbar() {
               type="button"
               onClick={closeMobileMenu}
               aria-label="Close menu"
-              className="size-10 rounded-full bg-white/10 flex items-center justify-center text-white"
+              className="size-10 rounded-full bg-white/10 flex items-center justify-center text-[#F5F1E8]"
             >
               <X className="size-5" />
             </button>
           </div>
 
           {/* Navigation Links */}
-          <nav className="mt-8 flex flex-col space-y-4 flex-1 overflow-y-auto">
+          <nav className="mt-8 flex flex-col space-y-3 flex-1 overflow-y-auto">
             {navLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
                 onClick={closeMobileMenu}
-                className="font-display text-xl text-white/90 hover:text-gold transition py-2 border-b border-white/5"
+                className="flex items-center justify-between font-display text-lg text-[#F5F1E8]/90 hover:text-gold transition py-2.5 border-b border-[#D6A84F]/10"
               >
-                {link.label}
+                <span>{link.label}</span>
+                <span className="font-gurmukhi text-sm font-medium text-[#D6A84F]">{link.punjabi}</span>
               </a>
             ))}
           </nav>
 
           {/* Bottom CTAs */}
-          <div className="pt-6 border-t border-white/10 space-y-3">
+          <div className="pt-6 border-t border-[#D6A84F]/15 space-y-3">
             <a
               href="#reservation"
               onClick={closeMobileMenu}
-              className="flex w-full items-center justify-center gap-2 rounded-lg bg-primary py-3.5 text-xs font-bold uppercase tracking-wider text-black shadow-lg shadow-primary/20"
+              className="flex w-full items-center justify-center gap-2 rounded-lg bg-primary py-3.5 text-xs font-bold uppercase tracking-wider text-[#0E1110] shadow-lg shadow-primary/20 hover:bg-[#F1D08A]"
             >
               <Calendar className="size-4" />
               Book a Table
@@ -171,7 +198,7 @@ export function Navbar() {
               </a>
               <a
                 href={DAWAT_INFO.phoneHref}
-                className="flex items-center justify-center gap-1.5 rounded-lg border border-white/20 bg-white/5 py-3 text-xs font-semibold uppercase text-white"
+                className="flex items-center justify-center gap-1.5 rounded-lg border border-[#D6A84F]/20 bg-[#151A18] py-3 text-xs font-semibold uppercase text-[#F5F1E8]"
               >
                 <Phone className="size-3.5 text-gold" />
                 Call Now

@@ -41,25 +41,25 @@ const cardsData: FloatingCardItem[] = [
 
 export function Floating3DExperience() {
   return (
-    <section className="relative bg-[#08090c] py-24 sm:py-32 overflow-hidden border-y border-white/10">
+    <section className="relative bg-[#0E1110] py-24 sm:py-32 overflow-hidden border-y border-[#D6A84F]/15">
       {/* Background radial spotlights */}
       <div
         aria-hidden="true"
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-[650px] rounded-full bg-gold/5 blur-[160px] pointer-events-none"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-[650px] rounded-full bg-[#D6A84F]/5 blur-[160px] pointer-events-none"
       />
 
       <div className="mx-auto max-w-[1400px] px-5 sm:px-8">
         <div className="mx-auto max-w-3xl text-center">
           <Reveal>
-            <p className="eyebrow">Interactive Space</p>
+            <p className="eyebrow text-[#D6A84F]">Interactive Space</p>
           </Reveal>
           <Reveal delay={100}>
-            <h2 className="mt-4 font-display text-4xl sm:text-5xl font-bold tracking-tight text-white">
+            <h2 className="mt-4 font-display text-4xl sm:text-5xl font-bold tracking-tight text-[#F5F1E8]">
               Step Inside Get To Gether
             </h2>
           </Reveal>
           <Reveal delay={200}>
-            <p className="mt-4 text-sm sm:text-base text-muted-foreground leading-relaxed">
+            <p className="mt-4 text-sm sm:text-base text-[#A9A59B] leading-relaxed">
               Hover over or tap any card to experience the depth, textures, and atmosphere of our
               real dining spaces in Gurdaspur.
             </p>
@@ -123,10 +123,10 @@ function Interactive3DCard({ card, index }: { card: FloatingCardItem; index: num
             ? "transform 0.12s ease-out"
             : "transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s ease",
           boxShadow: isHovered
-            ? `${-rotation.y * 2}px ${15 + rotation.x * 2}px 45px rgba(0,0,0,0.9), 0 0 35px rgba(201,147,82,0.22)`
+            ? `${-rotation.y * 2}px ${15 + rotation.x * 2}px 45px rgba(0,0,0,0.9), 0 0 35px rgba(214,168,79,0.2)`
             : "0 15px 35px rgba(0,0,0,0.75)",
         }}
-        className="group relative flex flex-col justify-between h-full rounded-2xl border border-white/15 bg-gradient-to-b from-[#181a22] to-[#101217] p-5 sm:p-6 shadow-2xl transition-all duration-300 hover:border-gold/60 will-change-transform preserve-3d"
+        className="group relative flex flex-col justify-between h-full rounded-2xl border border-[#D6A84F]/20 bg-gradient-to-b from-[#18201C] to-[#151A18] p-5 sm:p-6 shadow-2xl transition-all duration-300 hover:border-[#D6A84F]/60 will-change-transform preserve-3d"
       >
         {/* Dynamic Specular Sheen */}
         <div
@@ -142,16 +142,16 @@ function Interactive3DCard({ card, index }: { card: FloatingCardItem; index: num
           style={{ transform: "translateZ(20px)" }}
           className="flex items-center justify-between pb-3.5 preserve-3d"
         >
-          <span className="text-[10px] font-bold uppercase tracking-widest text-gold bg-gold/15 px-3 py-1 rounded-full border border-gold/30 shadow-md">
+          <span className="text-[10px] font-bold uppercase tracking-widest text-[#D6A84F] bg-[#D6A84F]/10 px-3 py-1 rounded-full border border-[#D6A84F]/30 shadow-md">
             {card.badge}
           </span>
-          <span className="text-[11px] font-mono text-white/60">{card.category}</span>
+          <span className="text-[11px] font-mono text-[#A9A59B]">{card.category}</span>
         </div>
 
         {/* Real Image Canvas (Elevated Z: +24px) */}
         <div
           style={{ transform: "translateZ(24px)" }}
-          className="relative overflow-hidden rounded-xl h-64 sm:h-72 w-full border border-white/15 shadow-2xl preserve-3d"
+          className="relative overflow-hidden rounded-xl h-64 sm:h-72 w-full border border-[#D6A84F]/20 shadow-2xl preserve-3d"
         >
           <img
             src={card.image}
@@ -167,10 +167,10 @@ function Interactive3DCard({ card, index }: { card: FloatingCardItem; index: num
           style={{ transform: "translateZ(22px)" }}
           className="mt-4 pt-2 preserve-3d"
         >
-          <h3 className="font-display text-xl font-bold text-white group-hover:text-primary transition-colors">
+          <h3 className="font-display text-xl font-bold text-[#F5F1E8] group-hover:text-[#D6A84F] transition-colors">
             {card.title}
           </h3>
-          <p className="mt-2 text-xs sm:text-sm text-muted-foreground leading-relaxed font-light">
+          <p className="mt-2 text-xs sm:text-sm text-[#A9A59B] leading-relaxed font-light">
             {card.description}
           </p>
         </div>

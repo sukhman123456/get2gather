@@ -16,7 +16,7 @@ export function FloatingWhatsAppButton() {
       <div className="flex items-center gap-2 group">
         {/* Desktop Hover Tooltip */}
         <div
-          className="pointer-events-none hidden sm:flex items-center gap-2 py-1.5 px-3 rounded-full border border-pink-500/30 bg-[#0e1217]/90 backdrop-blur-md text-xs font-medium text-pink-300 shadow-[0_8px_20px_rgba(0,0,0,0.5)] opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 whitespace-nowrap"
+          className="pointer-events-none hidden sm:flex items-center gap-2 py-1.5 px-3 rounded-full border border-[#D6A84F]/25 bg-[#151A18]/95 backdrop-blur-md text-xs font-medium text-pink-300 shadow-[0_8px_20px_rgba(0,0,0,0.5)] opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 whitespace-nowrap"
           aria-hidden="true"
         >
           <span className="inline-block size-2 rounded-full bg-pink-400 animate-pulse" />
@@ -55,7 +55,7 @@ export function FloatingWhatsAppButton() {
       <div className="flex items-center gap-2 group">
         {/* Desktop Hover Tooltip */}
         <div
-          className="pointer-events-none hidden sm:flex items-center gap-2 py-1.5 px-3 rounded-full border border-emerald-500/30 bg-[#0e1217]/90 backdrop-blur-md text-xs font-medium text-emerald-300 shadow-[0_8px_20px_rgba(0,0,0,0.5)] opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 whitespace-nowrap"
+          className="pointer-events-none hidden sm:flex items-center gap-2 py-1.5 px-3 rounded-full border border-[#D6A84F]/25 bg-[#151A18]/95 backdrop-blur-md text-xs font-medium text-emerald-300 shadow-[0_8px_20px_rgba(0,0,0,0.5)] opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 whitespace-nowrap"
           aria-hidden="true"
         >
           <span className="inline-block size-2 rounded-full bg-emerald-400 animate-pulse" />

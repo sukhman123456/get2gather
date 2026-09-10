@@ -13,6 +13,7 @@ function copyUploadsPlugin() {
     name: "copy-uploads-plugin",
     configResolved() {
       const brainDir = "C:\\Users\\hp\\.gemini\\antigravity-ide\\brain\\71d61331-22d8-463e-b147-42961e175ca7";
+      const currentBrainDir = "C:\\Users\\hp\\.gemini\\antigravity-ide\\brain\\7da7e501-ac4d-4571-9b81-647fd6a76ad6";
       const userUploadDir = path.join(brainDir, ".user_uploaded");
       const targetDir = path.resolve("./public/uploads");
       const mappings = [
@@ -22,6 +23,14 @@ function copyUploadsPlugin() {
         { src: path.join(userUploadDir, "media_1788983839077.jpg"), dest: "gtg-party-celebration.jpg" },
         { src: path.join(userUploadDir, "media_1788983839409.jpg"), dest: "gtg-coffee-cappuccino.jpg" },
         { src: path.join(brainDir, "hero_luxury_ambience_1788987004078.jpg"), dest: "hero-luxury-ambience.jpg" },
+        // New luxury restaurant visuals
+        { src: path.join(currentBrainDir, "luxury_dining_sanctuary_1789029388857.jpg"), dest: "gtg-luxury-dining-lounge.jpg" },
+        // Replace old customer dining photo so legacy references also show the luxury dining lounge
+        { src: path.join(currentBrainDir, "luxury_dining_sanctuary_1789029388857.jpg"), dest: "gurdaspur-dining-customer.jpg" },
+        { src: path.join(currentBrainDir, "tandoori_sizzler_platter_1789029409753.jpg"), dest: "gtg-tandoori-sizzler.jpg" },
+        { src: path.join(currentBrainDir, "punjabi_royal_feast_1789029440224.jpg"), dest: "gtg-punjabi-royal-feast.jpg" },
+        { src: path.join(currentBrainDir, "gourmet_pizza_pasta_1789029461433.jpg"), dest: "gtg-pizza-pasta-feast.jpg" },
+        { src: path.join(currentBrainDir, "vip_table_reservation_1789029486666.jpg"), dest: "gtg-vip-reservation.jpg" },
       ];
       for (const m of mappings) {
         const s = m.src;

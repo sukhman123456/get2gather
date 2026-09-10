@@ -53,25 +53,25 @@ export function LightboxModal({
       role="dialog"
       aria-modal="true"
       aria-label="Image Lightbox"
-      className="fixed inset-0 z-50 flex flex-col items-center justify-between bg-black/95 backdrop-blur-xl p-4 sm:p-6 transition-opacity duration-300"
+      className="fixed inset-0 z-50 flex flex-col items-center justify-between bg-[#0E1110]/95 backdrop-blur-xl p-4 sm:p-6 transition-opacity duration-300"
       onClick={onClose}
     >
       {/* Top Bar */}
       <div
-        className="flex w-full max-w-6xl items-center justify-between text-white/90 z-10 pb-2 border-b border-white/10"
+        className="flex w-full max-w-6xl items-center justify-between text-[#F5F1E8] z-10 pb-2 border-b border-[#D6A84F]/15"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="max-w-md truncate">
-          <p className="font-display text-base sm:text-lg text-primary font-semibold truncate">
+          <p className="font-display text-base sm:text-lg text-[#D6A84F] font-semibold truncate">
             {current.title}
           </p>
           {current.subtitle && (
-            <p className="text-xs text-white/60 truncate">{current.subtitle}</p>
+            <p className="text-xs text-[#A9A59B] truncate">{current.subtitle}</p>
           )}
         </div>
 
         <div className="flex items-center gap-2">
-          <span className="text-xs font-mono text-white/60 px-2 py-1 bg-white/10 rounded">
+          <span className="text-xs font-mono text-[#A9A59B] px-2.5 py-1 bg-[#151A18] border border-[#D6A84F]/20 rounded">
             {currentIndex + 1} / {images.length}
           </span>
           <a
@@ -79,14 +79,14 @@ export function LightboxModal({
             target="_blank"
             rel="noopener noreferrer"
             title="Open Full Image"
-            className="p-2 rounded-full hover:bg-white/10 text-white/80 transition"
+            className="p-2 rounded-full hover:bg-[#151A18] text-[#F5F1E8] transition"
           >
             <ExternalLink className="size-4" />
           </a>
           <button
             type="button"
             onClick={onClose}
-            className="p-2 rounded-full bg-white/10 hover:bg-white/20 text-white transition hover:scale-105"
+            className="p-2 rounded-full bg-[#151A18] hover:bg-[#18201C] text-[#F5F1E8] border border-[#D6A84F]/20 transition hover:scale-105"
             aria-label="Close modal"
           >
             <X className="size-5" />
@@ -105,14 +105,14 @@ export function LightboxModal({
             type="button"
             onClick={() => onNavigate(currentIndex - 1)}
             aria-label="Previous image"
-            className="absolute left-2 sm:-left-12 z-20 flex size-11 items-center justify-center rounded-full bg-black/60 border border-white/20 text-white hover:bg-primary hover:text-black transition duration-200"
+            className="absolute left-2 sm:-left-12 z-20 flex size-11 items-center justify-center rounded-full bg-[#151A18]/80 border border-[#D6A84F]/30 text-[#F5F1E8] hover:bg-[#D6A84F] hover:text-[#0E1110] transition duration-200"
           >
             <ChevronLeft className="size-6" />
           </button>
         )}
 
         {/* Current Image */}
-        <div className="relative max-h-[72vh] max-w-full flex items-center justify-center overflow-hidden rounded-lg shadow-2xl border border-white/10">
+        <div className="relative max-h-[72vh] max-w-full flex items-center justify-center overflow-hidden rounded-lg shadow-2xl border border-[#D6A84F]/20">
           <img
             src={current.image}
             alt={current.title}
@@ -126,7 +126,7 @@ export function LightboxModal({
             type="button"
             onClick={() => onNavigate(currentIndex + 1)}
             aria-label="Next image"
-            className="absolute right-2 sm:-right-12 z-20 flex size-11 items-center justify-center rounded-full bg-black/60 border border-white/20 text-white hover:bg-primary hover:text-black transition duration-200"
+            className="absolute right-2 sm:-right-12 z-20 flex size-11 items-center justify-center rounded-full bg-[#151A18]/80 border border-[#D6A84F]/30 text-[#F5F1E8] hover:bg-[#D6A84F] hover:text-[#0E1110] transition duration-200"
           >
             <ChevronRight className="size-6" />
           </button>
@@ -145,8 +145,8 @@ export function LightboxModal({
             onClick={() => onNavigate(idx)}
             className={`relative flex-shrink-0 size-14 sm:size-16 rounded overflow-hidden border-2 transition-all ${
               idx === currentIndex
-                ? "border-primary scale-105 shadow-md shadow-primary/30"
-                : "border-white/20 opacity-50 hover:opacity-100"
+                ? "border-[#D6A84F] scale-105 shadow-md shadow-[#D6A84F]/30"
+                : "border-[#D6A84F]/20 opacity-50 hover:opacity-100"
             }`}
           >
             <img src={img.image} alt={img.title} className="size-full object-cover" />

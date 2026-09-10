@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import { Coffee, Sparkles, PartyPopper } from "lucide-react";
+import { Coffee, Sparkles, PartyPopper, Flame, UtensilsCrossed } from "lucide-react";
 import { REAL_PHOTOS } from "@/lib/dawatData";
 import { Reveal } from "./Reveal";
 
@@ -33,15 +33,15 @@ export function FoodCoffeeSection() {
   };
 
   return (
-    <section className="relative bg-[#0a0c10] py-24 sm:py-32 overflow-hidden border-t border-white/10">
+    <section className="relative bg-[#0E1110] py-24 sm:py-32 overflow-hidden border-t border-[#D6A84F]/15">
       {/* Warm volumetric lighting */}
       <div
         aria-hidden="true"
-        className="absolute top-1/2 left-1/4 -translate-y-1/2 size-[500px] rounded-full bg-amber-500/10 blur-[140px] pointer-events-none"
+        className="absolute top-1/2 left-1/4 -translate-y-1/2 size-[500px] rounded-full bg-[#D6A84F]/10 blur-[140px] pointer-events-none"
       />
       <div
         aria-hidden="true"
-        className="absolute bottom-10 right-1/4 size-[400px] rounded-full bg-gold/10 blur-[130px] pointer-events-none"
+        className="absolute bottom-10 right-1/4 size-[400px] rounded-full bg-[#18201C]/40 blur-[130px] pointer-events-none"
       />
 
       <div className="mx-auto max-w-[1400px] px-5 sm:px-8">
@@ -51,12 +51,12 @@ export function FoodCoffeeSection() {
             <p className="eyebrow">Artisanal Brews &amp; Handcrafted Dishes</p>
           </Reveal>
           <Reveal delay={100}>
-            <h2 className="mt-4 font-display text-4xl sm:text-5xl font-bold tracking-tight text-white">
+            <h2 className="mt-4 font-display text-4xl sm:text-5xl font-bold tracking-tight text-[#F5F1E8]">
               More Than A Meal
             </h2>
           </Reveal>
           <Reveal delay={200}>
-            <p className="mt-5 text-base sm:text-lg text-muted-foreground leading-relaxed">
+            <p className="mt-5 text-base sm:text-lg text-[#A9A59B] leading-relaxed font-light">
               At Get To Gether Restaurant, every cup of coffee is an invitation to pause, and every
               plate is a tribute to culinary craftsmanship and shared conversations.
             </p>
@@ -71,23 +71,23 @@ export function FoodCoffeeSection() {
               <div
                 ref={cardRef}
                 style={card3dStyle}
-                className="group relative overflow-hidden rounded-2xl border-2 border-gold/30 bg-gradient-to-b from-[#1c1712] via-[#12100d] to-[#0d0c0b] p-6 sm:p-8 shadow-2xl shadow-black/80 will-change-transform"
+                className="group relative overflow-hidden rounded-2xl border-2 border-[#D6A84F]/30 bg-gradient-to-b from-[#18201C] via-[#151A18] to-[#0E1110] p-6 sm:p-8 shadow-2xl shadow-black/80 will-change-transform"
               >
                 {/* Subtle amber rim light */}
                 <div
                   aria-hidden="true"
-                  className="absolute -top-24 -right-24 size-48 rounded-full bg-gold/25 blur-3xl"
+                  className="absolute -top-24 -right-24 size-48 rounded-full bg-[#D6A84F]/20 blur-3xl"
                 />
 
                 {/* Top Badge */}
                 <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2 text-gold">
+                  <div className="flex items-center gap-2 text-[#D6A84F]">
                     <Coffee className="size-5" />
                     <span className="text-xs font-bold uppercase tracking-widest">
                       Get To Gether Cafe
                     </span>
                   </div>
-                  <span className="text-xs font-mono text-gold/80 bg-gold/10 px-2.5 py-1 rounded border border-gold/20">
+                  <span className="text-xs font-mono text-[#D6A84F]/90 bg-[#D6A84F]/10 px-2.5 py-1 rounded border border-[#D6A84F]/20">
                     From ₹50/-
                   </span>
                 </div>
@@ -101,10 +101,10 @@ export function FoodCoffeeSection() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
                   <div className="absolute bottom-4 left-4 right-4">
-                    <p className="font-serif italic text-xl text-white">
+                    <p className="font-serif italic text-xl text-[#F5F1E8]">
                       Freshly Brewed &bull; Silky Crema
                     </p>
-                    <p className="text-xs text-white/70 mt-0.5">
+                    <p className="text-xs text-[#A9A59B] mt-0.5">
                       Roasted beans, perfectly frothed milk &amp; comforting warmth
                     </p>
                   </div>
@@ -112,22 +112,22 @@ export function FoodCoffeeSection() {
 
                 {/* Coffee Offerings breakdown */}
                 <div className="mt-6 space-y-3">
-                  <div className="flex items-center justify-between text-sm border-b border-white/10 pb-2">
-                    <span className="text-white font-medium">Hot Artisanal Coffee</span>
-                    <span className="font-mono text-gold font-semibold">₹50/-</span>
+                  <div className="flex items-center justify-between text-sm border-b border-[#D6A84F]/15 pb-2">
+                    <span className="text-[#F5F1E8] font-medium">Hot Artisanal Coffee</span>
+                    <span className="font-mono text-[#D6A84F] font-semibold">₹50/-</span>
                   </div>
-                  <div className="flex items-center justify-between text-sm border-b border-white/10 pb-2">
-                    <span className="text-white font-medium">Chilled Cold Coffee</span>
-                    <span className="font-mono text-gold font-semibold">₹90/-</span>
+                  <div className="flex items-center justify-between text-sm border-b border-[#D6A84F]/15 pb-2">
+                    <span className="text-[#F5F1E8] font-medium">Chilled Cold Coffee</span>
+                    <span className="font-mono text-[#D6A84F] font-semibold">₹90/-</span>
                   </div>
                   <div className="flex items-center justify-between text-sm">
-                    <span className="text-white font-medium">Cold Coffee with Ice Cream</span>
-                    <span className="font-mono text-gold font-semibold">₹150/-</span>
+                    <span className="text-[#F5F1E8] font-medium">Cold Coffee with Ice Cream</span>
+                    <span className="font-mono text-[#D6A84F] font-semibold">₹150/-</span>
                   </div>
                 </div>
 
                 {/* Subtext */}
-                <p className="mt-5 text-xs text-muted-foreground italic leading-relaxed">
+                <p className="mt-5 text-xs text-[#A9A59B] italic leading-relaxed font-light">
                   Steaming cups for quiet conversations or cold creamy blends to cool down your
                   afternoons.
                 </p>
@@ -139,7 +139,7 @@ export function FoodCoffeeSection() {
           <div className="lg:col-span-6 space-y-6">
             {/* Real Dish 1: Blue Ocean Mocktail Cooler */}
             <Reveal delay={150}>
-              <div className="group relative flex flex-col sm:flex-row items-center gap-5 glass-panel p-4 rounded-xl border border-white/10 card-3d">
+              <div className="group relative flex flex-col sm:flex-row items-center gap-5 glass-panel p-4 rounded-xl border border-[#D6A84F]/20 card-3d">
                 <div className="size-full sm:size-36 shrink-0 overflow-hidden rounded-lg border border-white/10">
                   <img
                     src={REAL_PHOTOS.mocktailDrink}
@@ -149,15 +149,15 @@ export function FoodCoffeeSection() {
                 </div>
                 <div className="flex-1">
                   <div className="flex items-center gap-2">
-                    <Sparkles className="size-4 text-gold" />
-                    <span className="text-xs font-bold uppercase tracking-widest text-gold">
+                    <Sparkles className="size-4 text-[#D6A84F]" />
+                    <span className="text-xs font-bold uppercase tracking-widest text-[#D6A84F]">
                       Signature Sips
                     </span>
                   </div>
-                  <h3 className="mt-1 font-display text-lg font-semibold text-white">
+                  <h3 className="mt-1 font-display text-lg font-semibold text-[#F5F1E8]">
                     Layered Blue Ocean Coolers &amp; Mocktails
                   </h3>
-                  <p className="mt-1.5 text-xs text-muted-foreground leading-relaxed">
+                  <p className="mt-1.5 text-xs text-[#A9A59B] leading-relaxed font-light">
                     Sip on mint-muddled citrus mocktails, Lovers Passion, and vibrant layered
                     coolers freshly handcrafted at the bar counter.
                   </p>
@@ -167,7 +167,7 @@ export function FoodCoffeeSection() {
 
             {/* Real Dish 2: Festive Celebrations & Party Hall */}
             <Reveal delay={250}>
-              <div className="group relative flex flex-col sm:flex-row items-center gap-5 glass-panel p-4 rounded-xl border border-white/10 card-3d">
+              <div className="group relative flex flex-col sm:flex-row items-center gap-5 glass-panel p-4 rounded-xl border border-[#D6A84F]/20 card-3d">
                 <div className="size-full sm:size-36 shrink-0 overflow-hidden rounded-lg border border-white/10">
                   <img
                     src={REAL_PHOTOS.celebrationParty}
@@ -177,15 +177,15 @@ export function FoodCoffeeSection() {
                 </div>
                 <div className="flex-1">
                   <div className="flex items-center gap-2">
-                    <PartyPopper className="size-4 text-amber-400" />
-                    <span className="text-xs font-bold uppercase tracking-widest text-amber-400">
+                    <PartyPopper className="size-4 text-[#D6A84F]" />
+                    <span className="text-xs font-bold uppercase tracking-widest text-[#D6A84F]">
                       Celebrations &amp; Events
                     </span>
                   </div>
-                  <h3 className="mt-1 font-display text-lg font-semibold text-white">
+                  <h3 className="mt-1 font-display text-lg font-semibold text-[#F5F1E8]">
                     Festive Celebrations &amp; Private Gatherings
                   </h3>
-                  <p className="mt-1.5 text-xs text-muted-foreground leading-relaxed">
+                  <p className="mt-1.5 text-xs text-[#A9A59B] leading-relaxed font-light">
                     From custom superhero balloon arches to intimate family birthdays and
                     anniversaries, celebrate your milestones in our dedicated party spaces.
                   </p>
@@ -195,8 +195,8 @@ export function FoodCoffeeSection() {
 
             {/* Philosophy quote */}
             <Reveal delay={350}>
-              <div className="p-5 rounded-xl border border-gold/20 bg-gold/[0.04]">
-                <p className="font-serif italic text-base text-white/90 leading-relaxed">
+              <div className="p-5 rounded-xl border border-[#D6A84F]/25 bg-[#D6A84F]/[0.04]">
+                <p className="font-serif italic text-base text-[#F5F1E8]/90 leading-relaxed font-light">
                   &ldquo;We don&apos;t just serve meals — we craft memories over steaming cups,
                   charcoal smoke, and warmth that feels like coming home.&rdquo;
                 </p>

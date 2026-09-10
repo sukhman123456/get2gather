@@ -72,8 +72,8 @@ export function Logo3DEmblem({
 
   // Dynamic physical drop shadow calculating light source from top-left
   const dynamicShadow = isInteractive
-    ? `${-rotate.y * 1.8}px ${24 + rotate.x * 1.5}px 50px rgba(0,0,0,0.92), 0 10px 25px rgba(0,0,0,0.8), 0 0 40px rgba(201,147,82,0.32)`
-    : "0 15px 35px rgba(0,0,0,0.85), 0 0 25px rgba(201,147,82,0.25)";
+    ? `${-rotate.y * 1.8}px ${24 + rotate.x * 1.5}px 50px rgba(0,0,0,0.92), 0 10px 25px rgba(0,0,0,0.8), 0 0 35px rgba(214,168,79,0.28)`
+    : "0 15px 35px rgba(0,0,0,0.85), 0 0 25px rgba(214,168,79,0.22)";
 
   return (
     <div
@@ -104,24 +104,24 @@ export function Logo3DEmblem({
           boxShadow: dynamicShadow,
         }}
       >
-        {/* 1. Halo Ambient Backlight (Warm architectural amber glow) */}
+        {/* 1. Halo Ambient Backlight (Warm champagne gold highlight glow) */}
         <div
           aria-hidden="true"
-          className="absolute -inset-5 rounded-full bg-[radial-gradient(circle_at_center,rgba(240,195,109,0.55)_0%,rgba(201,147,82,0.35)_40%,transparent_72%)] blur-2xl pointer-events-none -z-20 animate-glow"
+          className="absolute -inset-5 rounded-full bg-[radial-gradient(circle_at_center,rgba(241,208,138,0.45)_0%,rgba(214,168,79,0.22)_40%,transparent_72%)] blur-2xl pointer-events-none -z-20 animate-glow"
         />
 
         {/* 2. Simulated 3D Extrusion Side Edge (Physical Brass Thickness) */}
         <div
           aria-hidden="true"
-          className="absolute inset-0 rounded-full bg-gradient-to-b from-[#3a2916] via-[#1c1409] to-[#0d0905] -z-10 translate-y-2 blur-[1px]"
+          className="absolute inset-0 rounded-full bg-gradient-to-b from-[#2a2416] via-[#151a18] to-[#0e1110] -z-10 translate-y-2 blur-[1px]"
         />
 
         {/* 3. Outer Metallic Gold Beveled Rim (Multi-layered Brass Bezel) */}
-        <div className="relative size-full rounded-full p-[4px] sm:p-[5px] bg-gradient-to-tr from-[#7a4e18] via-[#ffd983] via-45% to-[#50300d] shadow-[inset_0_3px_5px_rgba(255,255,255,0.7),inset_0_-3px_5px_rgba(0,0,0,0.85)]">
+        <div className="relative size-full rounded-full p-[4px] sm:p-[5px] bg-gradient-to-tr from-[#5e4318] via-[#F1D08A] via-45% to-[#3e2c10] shadow-[inset_0_3px_5px_rgba(255,255,255,0.7),inset_0_-3px_5px_rgba(0,0,0,0.85)]">
           {/* 4. Recessed Dark Architectural Groove for Depth */}
-          <div className="size-full rounded-full p-[2.5px] bg-[#0c0d11] shadow-[inset_0_4px_8px_rgba(0,0,0,0.95)]">
+          <div className="size-full rounded-full p-[2.5px] bg-[#0E1110] shadow-[inset_0_4px_8px_rgba(0,0,0,0.95)]">
             {/* 5. Inner Golden Stepped Bezel */}
-            <div className="relative size-full rounded-full overflow-hidden bg-[#161412] p-[2.5px] border border-gold/50 shadow-[0_0_15px_rgba(201,147,82,0.2)]">
+            <div className="relative size-full rounded-full overflow-hidden bg-[#151A18] p-[2.5px] border border-[#D6A84F]/50 shadow-[0_0_15px_rgba(214,168,79,0.2)]">
               {/* Actual Official Logo Image */}
               <img
                 src="/uploads/official-logo.jpg"

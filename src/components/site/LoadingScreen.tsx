@@ -27,14 +27,14 @@ export function LoadingScreen() {
   return (
     <div
       onClick={() => setVisible(false)}
-      className={`fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#090706] transition-opacity duration-500 cursor-pointer ${
+      className={`fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#0E1110] transition-opacity duration-500 cursor-pointer ${
         fading ? "opacity-0 pointer-events-none" : "opacity-100"
       }`}
     >
       {/* Cinematic Ambient Radial Glow */}
       <div
         aria-hidden="true"
-        className="absolute size-[500px] rounded-full bg-[radial-gradient(circle_at_center,rgba(223,183,108,0.22)_0%,rgba(184,126,62,0.08)_40%,transparent_75%)] blur-3xl animate-pulse"
+        className="absolute size-[500px] rounded-full bg-[radial-gradient(circle_at_center,rgba(214,168,79,0.18)_0%,rgba(24,32,28,0.3)_40%,transparent_75%)] blur-3xl animate-pulse"
       />
 
       {/* 3D Logo Emblem with Cinematic Depth Reveal */}
@@ -49,20 +49,20 @@ export function LoadingScreen() {
 
         {/* Brand Typography */}
         <div className="mt-7 text-center">
-          <span className="text-[10px] font-mono tracking-[0.32em] uppercase text-[#dfb76c] block">
+          <span className="text-[10px] font-mono tracking-[0.32em] uppercase text-[#D6A84F] block">
             GET TO GETHER
           </span>
-          <h1 className="font-display text-xl sm:text-2xl font-bold tracking-widest text-[#f7f2ea] uppercase mt-1 drop-shadow-[0_2px_15px_rgba(0,0,0,0.8)]">
+          <h1 className="font-display text-xl sm:text-2xl font-bold tracking-widest text-[#F5F1E8] uppercase mt-1 drop-shadow-[0_2px_15px_rgba(0,0,0,0.8)]">
             RESTAURANT &bull; GURDASPUR
           </h1>
-          <p className="font-serif italic text-xs text-[#cfc5b6]/80 mt-1 tracking-wider">
+          <p className="font-serif italic text-xs text-[#A9A59B]/80 mt-1 tracking-wider">
             &ldquo;Good Food. Great Company.&rdquo;
           </p>
         </div>
 
         {/* Golden Hairline Shimmer Line */}
-        <div className="mt-6 w-40 h-[1.5px] bg-[#dfb76c]/15 rounded-full overflow-hidden relative">
-          <div className="absolute inset-y-0 left-0 w-full bg-gradient-to-r from-transparent via-[#dfb76c] to-transparent animate-shimmer" />
+        <div className="mt-6 w-40 h-[1.5px] bg-[#D6A84F]/15 rounded-full overflow-hidden relative">
+          <div className="absolute inset-y-0 left-0 w-full bg-gradient-to-r from-transparent via-[#D6A84F] to-transparent animate-shimmer" />
         </div>
       </div>
     </div>

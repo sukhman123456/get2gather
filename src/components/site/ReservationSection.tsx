@@ -57,15 +57,15 @@ export function ReservationSection() {
   };
 
   return (
-    <section id="reservation" className="relative bg-[#0c0a08] py-24 sm:py-32 overflow-hidden border-t border-[#dfb76c]/15">
+    <section id="reservation" className="relative bg-[#0E1110] py-24 sm:py-32 overflow-hidden border-t border-[#D6A84F]/15">
       {/* Subtle Background Lighting */}
       <div
         aria-hidden="true"
-        className="absolute bottom-0 right-10 size-[500px] rounded-full bg-[#dfb76c]/5 blur-[160px] pointer-events-none"
+        className="absolute bottom-0 right-10 size-[500px] rounded-full bg-[#D6A84F]/5 blur-[160px] pointer-events-none"
       />
       <div
         aria-hidden="true"
-        className="absolute top-1/3 left-0 size-[450px] rounded-full bg-amber-600/5 blur-[150px] pointer-events-none"
+        className="absolute top-1/3 left-0 size-[450px] rounded-full bg-[#18201C] blur-[150px] pointer-events-none"
       />
 
       <div className="mx-auto max-w-[1400px] px-5 sm:px-8">
@@ -73,22 +73,27 @@ export function ReservationSection() {
           {/* Header */}
           <div className="text-center">
             <Reveal>
-              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-[#dfb76c]/30 bg-[#dfb76c]/10 mb-3">
-                <Sparkles className="size-3 text-[#dfb76c]" />
-                <span className="text-[10px] font-mono font-bold uppercase tracking-[0.3em] text-[#dfb76c]">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-[#D6A84F]/30 bg-[#D6A84F]/10 mb-3">
+                <Sparkles className="size-3 text-[#D6A84F]" />
+                <span className="font-gurmukhi text-xs font-semibold text-[#D6A84F]">ਟੇਬਲ ਬੁਕਿੰਗ</span>
+                <span className="text-[#D6A84F]/50 text-xs">&bull;</span>
+                <span className="text-[10px] font-mono font-bold uppercase tracking-[0.3em] text-[#D6A84F]">
                   RESERVATIONS &bull; GURDASPUR
                 </span>
               </div>
             </Reveal>
             <Reveal delay={100}>
-              <h2 className="mt-2 font-display text-3xl sm:text-5xl font-bold tracking-tight text-[#f7f2ea]">
+              <h2 className="mt-2 font-display text-3xl sm:text-5xl font-bold tracking-tight text-[#F5F1E8]">
                 Book Your Table at Get To Gether
               </h2>
+              <span className="font-gurmukhi text-xl sm:text-2xl text-[#D6A84F] font-medium block mt-1.5">
+                ਆਪਣਾ ਟੇਬਲ ਬੁੱਕ ਕਰੋ &bull; ਤੁਹਾਡਾ ਸੁਆਗਤ ਹੈ
+              </span>
             </Reveal>
             <Reveal delay={180}>
-              <p className="mt-4 text-xs sm:text-sm text-[#cfc5b6] max-w-xl mx-auto leading-relaxed font-light">
-                Planning a family Sunday dinner, a cozy coffee date at our lounge, or an intimate
-                celebration? Reserve in seconds with instant confirmation directly over WhatsApp.
+              <p className="mt-4 text-xs sm:text-sm text-[#A9A59B] max-w-xl mx-auto leading-relaxed font-light">
+                ਪਰਿਵਾਰਕ ਡਿਨਰ, ਦੋਸਤਾਂ ਦੀ ਮਹਿਫ਼ਿਲ ਜਾਂ ਜਸ਼ਨ — ਵਟਸਐਪ &apos;ਤੇ ਤੁਰੰਤ ਬੁੱਕ ਕਰੋ। (Planning a family Sunday dinner, a cozy coffee date at our lounge, or an intimate
+                celebration? Reserve in seconds with instant confirmation directly over WhatsApp).
               </p>
             </Reveal>
           </div>
@@ -103,13 +108,13 @@ export function ReservationSection() {
                 transform: `perspective(1200px) rotateX(${tilt.x}deg) rotateY(${tilt.y}deg) translateZ(10px)`,
                 transition: "transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease",
               }}
-              className="p-6 sm:p-10 rounded-2xl border-2 border-[#dfb76c]/30 bg-gradient-to-b from-[#18130e]/95 via-[#120e0b]/95 to-[#0e0b08]/98 backdrop-blur-xl shadow-[0_30px_70px_-15px_rgba(0,0,0,0.95),0_0_35px_rgba(223,183,108,0.12)] will-change-transform preserve-3d"
+              className="p-6 sm:p-10 rounded-2xl border border-[#D6A84F]/25 bg-gradient-to-b from-[#18201C]/95 via-[#151A18]/95 to-[#0E1110]/98 backdrop-blur-xl shadow-[0_30px_70px_-15px_rgba(0,0,0,0.95),0_0_35px_rgba(214,168,79,0.1)] will-change-transform preserve-3d"
             >
               <form onSubmit={handleWhatsAppBooking} className="space-y-6">
                 <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
                   {/* Name */}
                   <div>
-                    <label className="block text-[11px] font-mono font-semibold uppercase tracking-wider text-[#dfb76c] mb-2">
+                    <label className="block text-[11px] font-mono font-semibold uppercase tracking-wider text-[#D6A84F] mb-2">
                       Full Name
                     </label>
                     <input
@@ -118,13 +123,13 @@ export function ReservationSection() {
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       placeholder="e.g. Gurpreet Singh"
-                      className="w-full rounded-xl border border-[#dfb76c]/25 bg-[#100c09] px-4 py-3 text-sm text-[#f7f2ea] placeholder:text-[#8f8272] focus:border-[#dfb76c] focus:outline-none focus:ring-1 focus:ring-[#dfb76c] transition-colors"
+                      className="w-full rounded-xl border border-[#D6A84F]/25 bg-[#0E1110] px-4 py-3 text-sm text-[#F5F1E8] placeholder:text-[#A9A59B]/60 focus:border-[#D6A84F] focus:outline-none focus:ring-1 focus:ring-[#D6A84F] transition-colors"
                     />
                   </div>
 
                   {/* Phone */}
                   <div>
-                    <label className="block text-[11px] font-mono font-semibold uppercase tracking-wider text-[#dfb76c] mb-2">
+                    <label className="block text-[11px] font-mono font-semibold uppercase tracking-wider text-[#D6A84F] mb-2">
                       Phone Number
                     </label>
                     <input
@@ -133,13 +138,13 @@ export function ReservationSection() {
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       placeholder="+91 99886 04160"
-                      className="w-full rounded-xl border border-[#dfb76c]/25 bg-[#100c09] px-4 py-3 text-sm text-[#f7f2ea] placeholder:text-[#8f8272] focus:border-[#dfb76c] focus:outline-none focus:ring-1 focus:ring-[#dfb76c] transition-colors"
+                      className="w-full rounded-xl border border-[#D6A84F]/25 bg-[#0E1110] px-4 py-3 text-sm text-[#F5F1E8] placeholder:text-[#A9A59B]/60 focus:border-[#D6A84F] focus:outline-none focus:ring-1 focus:ring-[#D6A84F] transition-colors"
                     />
                   </div>
 
                   {/* Date */}
                   <div>
-                    <label className="block text-[11px] font-mono font-semibold uppercase tracking-wider text-[#dfb76c] mb-2">
+                    <label className="block text-[11px] font-mono font-semibold uppercase tracking-wider text-[#D6A84F] mb-2">
                       Date of Visit
                     </label>
                     <input
@@ -147,19 +152,19 @@ export function ReservationSection() {
                       required
                       value={formData.date}
                       onChange={(e) => setFormData({ ...formData, date: e.target.value })}
-                      className="w-full rounded-xl border border-[#dfb76c]/25 bg-[#100c09] px-4 py-3 text-sm text-[#f7f2ea] placeholder:text-[#8f8272] focus:border-[#dfb76c] focus:outline-none focus:ring-1 focus:ring-[#dfb76c] [color-scheme:dark] transition-colors"
+                      className="w-full rounded-xl border border-[#D6A84F]/25 bg-[#0E1110] px-4 py-3 text-sm text-[#F5F1E8] placeholder:text-[#A9A59B]/60 focus:border-[#D6A84F] focus:outline-none focus:ring-1 focus:ring-[#D6A84F] [color-scheme:dark] transition-colors"
                     />
                   </div>
 
                   {/* Time */}
                   <div>
-                    <label className="block text-[11px] font-mono font-semibold uppercase tracking-wider text-[#dfb76c] mb-2">
+                    <label className="block text-[11px] font-mono font-semibold uppercase tracking-wider text-[#D6A84F] mb-2">
                       Preferred Time
                     </label>
                     <select
                       value={formData.time}
                       onChange={(e) => setFormData({ ...formData, time: e.target.value })}
-                      className="w-full rounded-xl border border-[#dfb76c]/25 bg-[#100c09] px-4 py-3 text-sm text-[#f7f2ea] focus:border-[#dfb76c] focus:outline-none focus:ring-1 focus:ring-[#dfb76c] [color-scheme:dark] transition-colors"
+                      className="w-full rounded-xl border border-[#D6A84F]/25 bg-[#0E1110] px-4 py-3 text-sm text-[#F5F1E8] focus:border-[#D6A84F] focus:outline-none focus:ring-1 focus:ring-[#D6A84F] [color-scheme:dark] transition-colors"
                     >
                       <option value="11:30">11:30 AM (Lunch)</option>
                       <option value="12:30">12:30 PM (Lunch)</option>
@@ -175,13 +180,13 @@ export function ReservationSection() {
 
                   {/* Guests */}
                   <div>
-                    <label className="block text-[11px] font-mono font-semibold uppercase tracking-wider text-[#dfb76c] mb-2">
+                    <label className="block text-[11px] font-mono font-semibold uppercase tracking-wider text-[#D6A84F] mb-2">
                       Number of Guests
                     </label>
                     <select
                       value={formData.guests}
                       onChange={(e) => setFormData({ ...formData, guests: e.target.value })}
-                      className="w-full rounded-xl border border-[#dfb76c]/25 bg-[#100c09] px-4 py-3 text-sm text-[#f7f2ea] focus:border-[#dfb76c] focus:outline-none focus:ring-1 focus:ring-[#dfb76c] [color-scheme:dark] transition-colors"
+                      className="w-full rounded-xl border border-[#D6A84F]/25 bg-[#0E1110] px-4 py-3 text-sm text-[#F5F1E8] focus:border-[#D6A84F] focus:outline-none focus:ring-1 focus:ring-[#D6A84F] [color-scheme:dark] transition-colors"
                     >
                       <option value="1-2">1 – 2 People</option>
                       <option value="3-4">3 – 4 People (Family/Friends)</option>
@@ -193,7 +198,7 @@ export function ReservationSection() {
 
                   {/* Special Message */}
                   <div>
-                    <label className="block text-[11px] font-mono font-semibold uppercase tracking-wider text-[#dfb76c] mb-2">
+                    <label className="block text-[11px] font-mono font-semibold uppercase tracking-wider text-[#D6A84F] mb-2">
                       Occasion / Note (Optional)
                     </label>
                     <input
@@ -201,14 +206,14 @@ export function ReservationSection() {
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       placeholder="e.g. Birthday celebration, bamboo garden request"
-                      className="w-full rounded-xl border border-[#dfb76c]/25 bg-[#100c09] px-4 py-3 text-sm text-[#f7f2ea] placeholder:text-[#8f8272] focus:border-[#dfb76c] focus:outline-none focus:ring-1 focus:ring-[#dfb76c] transition-colors"
+                      className="w-full rounded-xl border border-[#D6A84F]/25 bg-[#0E1110] px-4 py-3 text-sm text-[#F5F1E8] placeholder:text-[#A9A59B]/60 focus:border-[#D6A84F] focus:outline-none focus:ring-1 focus:ring-[#D6A84F] transition-colors"
                     />
                   </div>
                 </div>
 
                 {/* Actions */}
-                <div className="pt-4 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-[#dfb76c]/15">
-                  <div className="flex items-center gap-2 text-xs text-[#cfc5b6]">
+                <div className="pt-4 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-[#D6A84F]/15">
+                  <div className="flex items-center gap-2 text-xs text-[#A9A59B]">
                     <CheckCircle2 className="size-4 text-emerald-400 shrink-0" />
                     <span>Direct WhatsApp confirmation with restaurant management</span>
                   </div>
@@ -217,19 +222,19 @@ export function ReservationSection() {
                     {/* Call Now */}
                     <a
                       href={DAWAT_INFO.phoneHref}
-                      className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 rounded-lg border border-[#dfb76c]/35 bg-white/5 px-6 py-3.5 text-xs font-semibold uppercase tracking-wider text-[#f7f2ea] hover:bg-[#dfb76c]/10 hover:border-[#dfb76c] transition active:scale-95"
+                      className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 rounded-lg border border-[#D6A84F]/35 bg-[#151A18] px-6 py-3.5 text-xs font-semibold uppercase tracking-wider text-[#F5F1E8] hover:bg-[#18201C] hover:border-[#D6A84F] transition active:scale-95"
                     >
-                      <Phone className="size-3.5 text-[#dfb76c]" />
+                      <Phone className="size-3.5 text-[#D6A84F]" />
                       <span>Call Now</span>
                     </a>
 
                     {/* Book via WhatsApp */}
                     <button
                       type="submit"
-                      className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 rounded-lg bg-[#dfb76c] hover:bg-[#ecd299] px-7 py-3.5 text-xs font-bold uppercase tracking-wider text-[#18120a] shadow-[0_10px_25px_rgba(0,0,0,0.85),0_0_20px_rgba(223,183,108,0.25)] transition-all hover:scale-105 active:scale-95"
+                      className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 rounded-lg bg-[#D6A84F] hover:bg-[#F1D08A] px-7 py-3.5 text-xs font-bold uppercase tracking-wider text-[#0E1110] shadow-[0_10px_25px_rgba(0,0,0,0.85),0_0_20px_rgba(214,168,79,0.25)] transition-all hover:scale-105 active:scale-95"
                     >
-                      <MessageCircle className="size-4 text-[#18120a]" />
-                      <span>Reserve on WhatsApp</span>
+                      <MessageCircle className="size-4 text-[#0E1110]" />
+                      <span>ਵਟਸਐਪ &apos;ਤੇ ਬੁੱਕ ਕਰੋ &bull; Reserve on WhatsApp</span>
                     </button>
                   </div>
                 </div>

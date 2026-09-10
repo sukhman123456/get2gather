@@ -43,16 +43,16 @@ export function MenuIntroSection({ onOpenOriginalMenu }: MenuIntroSectionProps) 
   return (
     <section
       ref={containerRef}
-      className="relative bg-[#0d0b09] py-20 sm:py-28 overflow-hidden border-t border-gold/15"
+      className="relative bg-[#0E1110] py-20 sm:py-28 overflow-hidden border-t border-[#D6A84F]/15"
     >
       {/* ── Ambient Background Lighting ── */}
       <div
         aria-hidden="true"
-        className="absolute top-1/2 -left-32 -translate-y-1/2 size-[450px] rounded-full bg-gold/5 blur-[140px] pointer-events-none"
+        className="absolute top-1/2 -left-32 -translate-y-1/2 size-[450px] rounded-full bg-[#D6A84F]/5 blur-[140px] pointer-events-none"
       />
       <div
         aria-hidden="true"
-        className="absolute bottom-0 right-1/4 size-[400px] rounded-full bg-primary/5 blur-[120px] pointer-events-none"
+        className="absolute bottom-0 right-1/4 size-[400px] rounded-full bg-[#18201C]/50 blur-[120px] pointer-events-none"
       />
 
       <div className="relative mx-auto max-w-[1360px] px-4 sm:px-6 lg:px-8">
@@ -63,16 +63,16 @@ export function MenuIntroSection({ onOpenOriginalMenu }: MenuIntroSectionProps) 
               ════════════════════════════════════════════════════════════ */}
           <div className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left">
             <Reveal>
-              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-gold/30 bg-gold/10">
-                <Utensils className="size-3 text-gold" />
-                <span className="text-[10px] font-mono font-bold uppercase tracking-[0.3em] text-gold">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-[#D6A84F]/30 bg-[#D6A84F]/10">
+                <Utensils className="size-3 text-[#D6A84F]" />
+                <span className="text-[10px] font-mono font-bold uppercase tracking-[0.3em] text-[#D6A84F]">
                   OUR MENU
                 </span>
               </div>
             </Reveal>
 
             <Reveal delay={100}>
-              <h2 className="mt-4 font-display text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.15]">
+              <h2 className="mt-4 font-display text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[#F5F1E8] leading-[1.15]">
                 A TABLE FULL OF
                 <span className="block gold-gradient-text mt-1">
                   GOOD THINGS
@@ -81,7 +81,7 @@ export function MenuIntroSection({ onOpenOriginalMenu }: MenuIntroSectionProps) 
             </Reveal>
 
             <Reveal delay={180}>
-              <p className="mt-4 max-w-xl text-sm sm:text-base text-white/80 leading-relaxed font-light">
+              <p className="mt-4 max-w-xl text-sm sm:text-base text-[#A9A59B] leading-relaxed font-light">
                 From comforting classics to indulgent favourites, discover something for every
                 gathering.
               </p>
@@ -94,7 +94,7 @@ export function MenuIntroSection({ onOpenOriginalMenu }: MenuIntroSectionProps) 
                   <a
                     key={pill}
                     href="#menu"
-                    className="px-3.5 py-1.5 rounded-full border border-gold/20 bg-white/[0.03] text-[11px] font-semibold tracking-wider text-white/85 transition-all duration-300 hover:border-gold hover:bg-gold/15 hover:text-gold active:scale-95"
+                    className="px-3.5 py-1.5 rounded-full border border-[#D6A84F]/20 bg-[#18201C] text-[11px] font-semibold tracking-wider text-[#F5F1E8]/85 transition-all duration-300 hover:border-[#D6A84F] hover:bg-[#D6A84F]/15 hover:text-[#D6A84F] active:scale-95"
                   >
                     {pill}
                   </a>
@@ -108,7 +108,7 @@ export function MenuIntroSection({ onOpenOriginalMenu }: MenuIntroSectionProps) 
                 {/* Explore Menu */}
                 <a
                   href="#menu"
-                  className="group inline-flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-primary to-accent px-7 py-3.5 text-xs sm:text-sm font-bold uppercase tracking-wider text-black shadow-lg shadow-primary/25 transition-all duration-300 hover:scale-105 hover:shadow-primary/40 active:scale-95"
+                  className="group inline-flex items-center justify-center gap-2 rounded-lg bg-[#D6A84F] px-7 py-3.5 text-xs sm:text-sm font-bold uppercase tracking-wider text-[#0E1110] shadow-lg shadow-primary/25 transition-all duration-300 hover:bg-[#F1D08A] hover:shadow-[0_0_20px_rgba(214,168,79,0.35)] hover:scale-105 active:scale-95"
                 >
                   <span>EXPLORE MENU</span>
                   <ArrowUpRight className="size-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -118,9 +118,9 @@ export function MenuIntroSection({ onOpenOriginalMenu }: MenuIntroSectionProps) 
                 <button
                   type="button"
                   onClick={() => onOpenOriginalMenu(0)}
-                  className="group inline-flex items-center justify-center gap-2 rounded-lg border border-white/25 bg-white/5 px-6 py-3.5 text-xs sm:text-sm font-semibold uppercase tracking-wider text-white backdrop-blur-md transition-all duration-300 hover:border-gold hover:bg-white/10 hover:text-gold active:scale-95"
+                  className="group inline-flex items-center justify-center gap-2 rounded-lg border border-[#D6A84F]/40 bg-[#151A18]/80 px-6 py-3.5 text-xs sm:text-sm font-semibold uppercase tracking-wider text-[#F5F1E8] backdrop-blur-md transition-all duration-300 hover:border-[#D6A84F] hover:bg-[#18201C] hover:text-[#F1D08A] active:scale-95"
                 >
-                  <BookOpen className="size-4 text-gold transition-transform group-hover:rotate-6" />
+                  <BookOpen className="size-4 text-[#D6A84F] transition-transform group-hover:rotate-6" />
                   <span>VIEW FULL MENU</span>
                 </button>
               </div>
@@ -147,9 +147,9 @@ export function MenuIntroSection({ onOpenOriginalMenu }: MenuIntroSectionProps) 
                   style={{
                     transform: "translateZ(30px)",
                     boxShadow:
-                      "-14px 22px 45px -8px rgba(0, 0, 0, 0.95), 0 0 30px -4px rgba(229, 184, 105, 0.22)",
+                      "-14px 22px 45px -8px rgba(0, 0, 0, 0.95), 0 0 30px -4px rgba(214, 168, 79, 0.22)",
                   }}
-                  className="group relative overflow-hidden rounded-2xl border-2 border-gold/40 bg-[#16120e] p-3 transition-transform duration-500 hover:scale-[1.02]"
+                  className="group relative overflow-hidden rounded-2xl border-2 border-[#D6A84F]/35 bg-[#151A18] p-3 transition-transform duration-500 hover:scale-[1.02]"
                 >
                   {/* Photo container */}
                   <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl bg-black/80">
@@ -162,20 +162,20 @@ export function MenuIntroSection({ onOpenOriginalMenu }: MenuIntroSectionProps) 
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
 
                     {/* Corner Tag */}
-                    <span className="absolute top-3 left-3 rounded-full border border-gold/40 bg-black/80 px-3 py-1 text-[10px] font-mono font-bold uppercase tracking-wider text-gold backdrop-blur-md">
+                    <span className="absolute top-3 left-3 rounded-full border border-[#D6A84F]/40 bg-[#0E1110]/85 px-3 py-1 text-[10px] font-mono font-bold uppercase tracking-wider text-[#D6A84F] backdrop-blur-md">
                       Signature Mocktail
                     </span>
 
                     {/* Price Tag */}
-                    <span className="absolute bottom-3 right-3 rounded-md border border-gold/40 bg-black/90 px-2.5 py-1 font-mono text-xs font-bold text-gold shadow-lg">
+                    <span className="absolute bottom-3 right-3 rounded-md border border-[#D6A84F]/40 bg-[#0E1110]/90 px-2.5 py-1 font-mono text-xs font-bold text-[#D6A84F] shadow-lg">
                       From ₹129/-
                     </span>
 
                     <div className="absolute bottom-3 left-3">
-                      <p className="font-serif text-base font-bold text-white">
+                      <p className="font-serif text-base font-bold text-[#F5F1E8]">
                         Blue Ocean &amp; Citrus Coolers
                       </p>
-                      <p className="text-[11px] text-white/70">
+                      <p className="text-[11px] text-[#A9A59B]">
                         Handcrafted with fresh mint &amp; lemon
                       </p>
                     </div>
@@ -189,10 +189,10 @@ export function MenuIntroSection({ onOpenOriginalMenu }: MenuIntroSectionProps) 
                       mouseOffset.y * -14
                     }px, 65px) rotate(-4deg)`,
                     boxShadow:
-                      "-12px 18px 40px -8px rgba(0, 0, 0, 0.9), 0 0 25px -4px rgba(229, 184, 105, 0.25)",
+                      "-12px 18px 40px -8px rgba(0, 0, 0, 0.9), 0 0 25px -4px rgba(214, 168, 79, 0.22)",
                     transition: "transform 0.3s cubic-bezier(0.16, 1, 0.3, 1)",
                   }}
-                  className="group absolute -bottom-6 -left-6 sm:-bottom-8 sm:-left-8 w-44 sm:w-52 overflow-hidden rounded-xl border border-gold/45 bg-[#1a140f] p-2 backdrop-blur-md hidden xs:block"
+                  className="group absolute -bottom-6 -left-6 sm:-bottom-8 sm:-left-8 w-44 sm:w-52 overflow-hidden rounded-xl border border-[#D6A84F]/40 bg-[#18201C] p-2 backdrop-blur-md hidden xs:block"
                 >
                   <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
                     <img
@@ -203,10 +203,10 @@ export function MenuIntroSection({ onOpenOriginalMenu }: MenuIntroSectionProps) 
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-transparent" />
                     <div className="absolute bottom-1.5 left-2 right-2">
-                      <p className="text-xs font-serif font-bold text-white leading-tight">
+                      <p className="text-xs font-serif font-bold text-[#F5F1E8] leading-tight">
                         Artisanal Coffee
                       </p>
-                      <p className="text-[9px] text-gold font-mono">From ₹50/-</p>
+                      <p className="text-[9px] text-[#D6A84F] font-mono">From ₹50/-</p>
                     </div>
                   </div>
                 </div>
@@ -219,10 +219,10 @@ export function MenuIntroSection({ onOpenOriginalMenu }: MenuIntroSectionProps) 
                     }px, 80px)`,
                     transition: "transform 0.3s cubic-bezier(0.16, 1, 0.3, 1)",
                   }}
-                  className="absolute -top-4 -right-4 flex items-center gap-1.5 rounded-full border border-gold/50 bg-[#0e0c0a]/95 px-3.5 py-1.5 shadow-xl backdrop-blur-md"
+                  className="absolute -top-4 -right-4 flex items-center gap-1.5 rounded-full border border-[#D6A84F]/50 bg-[#151A18]/95 px-3.5 py-1.5 shadow-xl backdrop-blur-md"
                 >
-                  <Sparkles className="size-3 text-gold" />
-                  <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-gold">
+                  <Sparkles className="size-3 text-[#D6A84F]" />
+                  <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#D6A84F]">
                     Live Charcoal Tandoor
                   </span>
                 </div>

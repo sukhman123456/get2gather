@@ -64,7 +64,7 @@ export function Hero3D({ onOpenPoster }: Hero3DProps) {
   return (
     <section
       ref={containerRef}
-      className="relative isolate flex min-h-[92svh] sm:min-h-[96svh] w-full items-center justify-center overflow-hidden bg-[#0c0a08] pt-24 pb-16 sm:pt-28 sm:pb-20 perspective-1400 preserve-3d"
+      className="relative isolate flex min-h-[92svh] sm:min-h-[96svh] w-full items-center justify-center overflow-hidden bg-[#0E1110] pt-24 pb-16 sm:pt-28 sm:pb-20 perspective-1400 preserve-3d"
     >
       {/* ── 1. Deepest Layer: Real Luxury Restaurant Interior (Z: -120px to -250px) ── */}
       <div
@@ -77,7 +77,7 @@ export function Hero3D({ onOpenPoster }: Hero3DProps) {
         <img
           src={REAL_PHOTOS.heroInterior}
           alt="Get To Gether Restaurant Gurdaspur - Warm dining lounge and ambience"
-          className="size-full object-cover object-center filter brightness-[0.72] contrast-[1.12]"
+          className="size-full object-cover object-center filter brightness-[0.70] contrast-[1.14]"
           loading="eager"
         />
       </div>
@@ -85,13 +85,13 @@ export function Hero3D({ onOpenPoster }: Hero3DProps) {
       {/* ── 2. Cinematic Volumetric Lighting & Darkening Gradients ── */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 -z-20 bg-gradient-to-t from-[#0c0a08] via-[#0c0a08]/55 to-[#0c0a08]/75 pointer-events-none"
+        className="absolute inset-0 -z-20 bg-gradient-to-t from-[#0E1110] via-[#0E1110]/60 to-[#0E1110]/80 pointer-events-none"
       />
       {/* Warm Ambient Spotlight following pointer */}
       <div
         aria-hidden="true"
         style={{
-          background: `radial-gradient(circle at ${lightPosition.x}% ${lightPosition.y}%, rgba(223, 183, 108, 0.22) 0%, rgba(184, 126, 62, 0.12) 40%, rgba(12, 10, 8, 0.82) 80%)`,
+          background: `radial-gradient(circle at ${lightPosition.x}% ${lightPosition.y}%, rgba(214, 168, 79, 0.20) 0%, rgba(24, 32, 28, 0.25) 40%, rgba(14, 17, 16, 0.88) 80%)`,
           transition: "background 0.3s ease-out",
         }}
         className="absolute inset-0 -z-20 pointer-events-none"
@@ -100,7 +100,7 @@ export function Hero3D({ onOpenPoster }: Hero3DProps) {
       {/* Warm Glow halo over foreground candle (bottom-left region) */}
       <div
         aria-hidden="true"
-        className="absolute bottom-12 left-1/4 -translate-x-1/2 size-72 rounded-full bg-amber-500/15 blur-3xl pointer-events-none -z-10"
+        className="absolute bottom-12 left-1/4 -translate-x-1/2 size-72 rounded-full bg-[#D6A84F]/10 blur-3xl pointer-events-none -z-10"
       />
 
       {/* ── 3. Left Flank: Vertical Brand Motto (GOOD FOOD GREAT COMPANY) ── */}
@@ -111,13 +111,13 @@ export function Hero3D({ onOpenPoster }: Hero3DProps) {
           }px, 40px)`,
           transition: "transform 0.25s cubic-bezier(0.16, 1, 0.3, 1)",
         }}
-        className="hidden md:flex flex-col items-start absolute left-8 lg:left-14 top-1/2 -translate-y-1/2 z-20 pointer-events-none select-none text-[#b3a18e] font-sans text-xs lg:text-sm font-semibold tracking-[0.24em] uppercase space-y-2.5"
+        className="hidden md:flex flex-col items-start absolute left-8 lg:left-14 top-1/2 -translate-y-1/2 z-20 pointer-events-none select-none text-[#A9A59B] font-sans text-xs lg:text-sm font-semibold tracking-[0.24em] uppercase space-y-2.5"
       >
         <span>GOOD</span>
         <span>FOOD</span>
         <span>GREAT</span>
         <span>COMPANY</span>
-        <span className="w-9 h-[1.5px] bg-[#b3a18e]/70 mt-1" />
+        <span className="w-9 h-[1.5px] bg-[#A9A59B]/70 mt-1" />
       </div>
 
       {/* ── 4. Bottom-Left: Minimalist Scroll Indicator (| SCROLL) ── */}
@@ -127,8 +127,8 @@ export function Hero3D({ onOpenPoster }: Hero3DProps) {
         }}
         className="absolute bottom-8 left-8 lg:left-14 z-20 hidden sm:flex items-center gap-2.5 select-none pointer-events-none"
       >
-        <span className="w-[1.5px] h-6 bg-[#dfb76c]/80" />
-        <span className="text-[10px] uppercase font-mono tracking-[0.3em] text-[#b3a18e]">
+        <span className="w-[1.5px] h-6 bg-[#D6A84F]/80" />
+        <span className="text-[10px] uppercase font-mono tracking-[0.3em] text-[#A9A59B]">
           SCROLL
         </span>
       </div>
@@ -141,7 +141,7 @@ export function Hero3D({ onOpenPoster }: Hero3DProps) {
           }px, 45px) rotate(-4deg)`,
           transition: "transform 0.28s cubic-bezier(0.16, 1, 0.3, 1)",
         }}
-        className="hidden md:flex flex-col items-center absolute right-8 lg:right-16 bottom-24 z-20 pointer-events-none select-none text-[#dfb76c]/85"
+        className="hidden md:flex flex-col items-center absolute right-8 lg:right-16 bottom-24 z-20 pointer-events-none select-none text-[#D6A84F]/85"
       >
         <span className="font-serif italic text-2xl lg:text-3xl font-light tracking-wide drop-shadow-[0_3px_15px_rgba(0,0,0,0.9)] leading-tight">
           More
@@ -152,7 +152,7 @@ export function Hero3D({ onOpenPoster }: Hero3DProps) {
         <span className="font-serif italic text-2xl lg:text-3xl font-light tracking-wide drop-shadow-[0_3px_15px_rgba(0,0,0,0.9)] leading-tight">
           A Meal
         </span>
-        <span className="text-xl lg:text-2xl mt-1 text-[#dfb76c]/75">
+        <span className="text-xl lg:text-2xl mt-1 text-[#D6A84F]/75">
           ♡
         </span>
       </div>
@@ -188,35 +188,45 @@ export function Hero3D({ onOpenPoster }: Hero3DProps) {
           }}
           className="mt-6 sm:mt-7 preserve-3d"
         >
-          {/* Spaced Uppercase Category Line */}
-          <span className="block text-[#dfb76c]/90 tracking-[0.28em] text-[10px] sm:text-xs font-mono uppercase">
-            AUTHENTIC DINING &bull; CAFE LOUNGE &bull; LIVE CHARCOAL TANDOOR
-          </span>
+          {/* Authentic Warm Punjabi Welcome Badge */}
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-[#D6A84F]/35 bg-[#D6A84F]/10 mb-3">
+            <span className="font-gurmukhi text-xs font-semibold text-[#D6A84F]">ਜੀ ਆਇਆਂ ਨੂੰ</span>
+            <span className="text-[#D6A84F]/60 text-xs">&bull;</span>
+            <span className="text-[10px] font-mono font-bold tracking-[0.25em] text-[#D6A84F] uppercase">
+              AUTHENTIC DINING &bull; CAFE LOUNGE
+            </span>
+          </div>
 
-          {/* Main Brand Title */}
-          <h1 className="mt-3 font-display text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-[#f7f2ea] leading-[1.1]">
+          {/* Main Brand Title with Gurmukhi & English */}
+          <h1 className="mt-2 font-display text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-[#F5F1E8] leading-[1.1]">
             <span className="block drop-shadow-[0_4px_30px_rgba(0,0,0,0.95)]">
               GET TO GETHER
             </span>
-            <span className="text-base sm:text-2xl lg:text-3xl font-serif font-light text-[#e3ded6] tracking-[0.25em] uppercase block mt-1.5">
-              RESTAURANT &bull; GURDASPUR
+            <span className="font-gurmukhi text-xl sm:text-2xl lg:text-3xl font-medium text-[#D6A84F] tracking-wide block mt-1">
+              ਗੈੱਟ ਟੂਗੈਦਰ ਰੈਸਟੋਰੈਂਟ
+            </span>
+            <span className="text-xs sm:text-sm font-serif font-light text-[#A9A59B] tracking-[0.25em] uppercase block mt-1">
+              TIBRI ROAD &bull; GURDASPUR (ਗੁਰਦਾਸਪੁਰ)
             </span>
           </h1>
 
           {/* Decorative Floral / Leaf Flourish Divider */}
           <div className="flex items-center justify-center gap-3 my-3 sm:my-3.5 opacity-85">
-            <span className="w-12 sm:w-20 h-[1px] bg-gradient-to-r from-transparent via-[#dfb76c]/60 to-[#dfb76c]" />
-            <span className="text-[#dfb76c] text-sm sm:text-base select-none">❦</span>
-            <span className="w-12 sm:w-20 h-[1px] bg-gradient-to-l from-transparent via-[#dfb76c]/60 to-[#dfb76c]" />
+            <span className="w-12 sm:w-20 h-[1px] bg-gradient-to-r from-transparent via-[#D6A84F]/60 to-[#D6A84F]" />
+            <span className="text-[#D6A84F] text-sm sm:text-base select-none">❦</span>
+            <span className="w-12 sm:w-20 h-[1px] bg-gradient-to-l from-transparent via-[#D6A84F]/60 to-[#D6A84F]" />
           </div>
 
-          {/* Tagline */}
-          <p className="font-serif text-lg sm:text-2xl lg:text-2xl text-[#f7f2ea] font-light tracking-wide">
-            &ldquo;Good Food. <span className="italic text-[#dfb76c] font-normal">Great Company.</span>&rdquo;
+          {/* Tagline & Authentic Punjabi Proverb */}
+          <p className="font-serif text-lg sm:text-2xl lg:text-2xl text-[#F5F1E8] font-light tracking-wide">
+            &ldquo;Good Food. <span className="italic text-[#D6A84F] font-normal">Great Company.</span>&rdquo;
+          </p>
+          <p className="font-gurmukhi text-sm sm:text-base text-[#D6A84F]/90 mt-1 font-normal tracking-wide">
+            ਚੰਗਾ ਖਾਣਾ • ਵਧੀਆ ਮਹਿਫ਼ਿਲ
           </p>
 
           {/* Story Narrative Description */}
-          <p className="mx-auto mt-3.5 max-w-2xl text-xs sm:text-sm lg:text-[15px] text-[#cfc5b6] leading-relaxed font-light">
+          <p className="mx-auto mt-3.5 max-w-2xl text-xs sm:text-sm lg:text-[15px] text-[#A9A59B] leading-relaxed font-light">
             Gurdaspur&apos;s premier culinary destination on Tibri Road. Enjoy authentic
             charcoal-roasted tandoori recipes, flavourful Punjabi curries, artisanal coffees, and
             heartwarming hospitality.
@@ -228,22 +238,22 @@ export function Hero3D({ onOpenPoster }: Hero3DProps) {
           style={{ transform: "translateZ(50px)" }}
           className="mt-7 sm:mt-9 flex flex-wrap items-center justify-center gap-3 sm:gap-4 preserve-3d"
         >
-          {/* Explore Menu (Solid Champagne Gold with Upward Arrow) */}
+          {/* Explore Menu */}
           <a
             href="#menu"
-            className="group inline-flex items-center justify-center gap-2 rounded-lg bg-[#dfb76c] px-7 sm:px-8 py-3.5 text-xs sm:text-sm font-bold tracking-wider uppercase text-[#1a120b] shadow-[0_10px_25px_rgba(0,0,0,0.85),0_0_25px_rgba(223,183,108,0.25)] transition-all duration-300 hover:bg-[#ebd095] hover:scale-105 hover:shadow-[0_15px_30px_rgba(0,0,0,0.9),0_0_35px_rgba(223,183,108,0.4)] active:scale-95"
+            className="group inline-flex items-center justify-center gap-2 rounded-lg bg-[#D6A84F] px-6 sm:px-8 py-3.5 text-xs sm:text-sm font-bold tracking-wider uppercase text-[#0E1110] shadow-[0_10px_25px_rgba(0,0,0,0.85),0_0_25px_rgba(214,168,79,0.25)] transition-all duration-300 hover:bg-[#F1D08A] hover:scale-105 hover:shadow-[0_15px_30px_rgba(0,0,0,0.9),0_0_35px_rgba(241,208,138,0.4)] active:scale-95"
           >
-            <span>EXPLORE MENU</span>
+            <span>ਸਾਡਾ ਮੀਨੂ &bull; EXPLORE MENU</span>
             <ArrowUpRight className="size-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </a>
 
-          {/* Book a Table (Dark Translucent Glass with Champagne Gold Border) */}
+          {/* Book a Table */}
           <a
             href="#reservation"
-            className="inline-flex items-center justify-center gap-2 rounded-lg border border-[#dfb76c]/45 bg-[#16120e]/75 px-6 sm:px-7 py-3.5 text-xs sm:text-sm font-semibold tracking-wider uppercase text-[#f7f2ea] backdrop-blur-md shadow-[0_10px_25px_rgba(0,0,0,0.7)] transition-all duration-300 hover:bg-[#221a13] hover:border-[#dfb76c] hover:text-[#dfb76c] active:scale-95"
+            className="inline-flex items-center justify-center gap-2 rounded-lg border border-[#D6A84F]/40 bg-[#151A18]/80 px-6 sm:px-7 py-3.5 text-xs sm:text-sm font-semibold tracking-wider uppercase text-[#F5F1E8] backdrop-blur-md shadow-[0_10px_25px_rgba(0,0,0,0.7)] transition-all duration-300 hover:bg-[#18201C] hover:border-[#D6A84F] hover:text-[#F1D08A] active:scale-95"
           >
-            <Calendar className="size-4 text-[#dfb76c]" />
-            <span>BOOK A TABLE</span>
+            <Calendar className="size-4 text-[#D6A84F]" />
+            <span>ਟੇਬਲ ਬੁੱਕ ਕਰੋ &bull; BOOK TABLE</span>
           </a>
         </div>
       </div>

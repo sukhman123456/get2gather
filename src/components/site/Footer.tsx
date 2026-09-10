@@ -14,68 +14,71 @@ const quickLinks = [
 
 export function Footer() {
   return (
-    <footer className="bg-[#080605] text-[#cfc5b6] border-t border-[#dfb76c]/15">
+    <footer className="bg-[#0E1110] text-[#A9A59B] border-t border-[#D6A84F]/15">
       <div className="mx-auto grid max-w-[1400px] gap-12 px-5 py-16 sm:px-8 md:grid-cols-2 lg:grid-cols-4 lg:py-20">
-        {/* ── Brand Column with Official 3D Logo Emblem ── */}
+        {/* ── Brand Column with Official 3D Logo Emblem & Punjabi Identity ── */}
         <div className="space-y-4">
           <div className="flex items-center gap-4">
             <Logo3DEmblem size="footer" enableMouseParallax={false} />
             <div>
-              <span className="font-display text-xl font-bold tracking-wider text-[#f7f2ea] uppercase block leading-tight">
+              <span className="font-display text-xl font-bold tracking-wider text-[#F5F1E8] uppercase block leading-tight">
                 Get To Gether
               </span>
-              <span className="text-[10px] uppercase font-mono tracking-[0.25em] text-[#dfb76c] block mt-0.5">
-                Restaurant &bull; Gurdaspur
+              <span className="font-gurmukhi text-sm font-semibold text-[#D6A84F] block mt-0.5">
+                ਗੈੱਟ ਟੂਗੈਦਰ ਰੈਸਟੋਰੈਂਟ
+              </span>
+              <span className="text-[10px] uppercase font-mono tracking-[0.22em] text-[#A9A59B] block mt-0.5">
+                Tibri Road &bull; Gurdaspur (ਗੁਰਦਾਸਪੁਰ)
               </span>
             </div>
           </div>
 
-          <p className="text-[10px] font-mono tracking-[0.24em] uppercase text-[#dfb76c]">
+          <p className="text-[10px] font-mono tracking-[0.24em] uppercase text-[#D6A84F]">
             Authentic Dining &bull; Cafe Lounge &bull; Charcoal Tandoor
           </p>
 
-          <p className="max-w-xs text-xs leading-relaxed text-[#bdae9c] font-light">
+          <p className="max-w-xs text-xs leading-relaxed text-[#A9A59B] font-light">
             &ldquo;{DAWAT_INFO.tagline}&rdquo; <br />
-            Gurdaspur&apos;s premier culinary destination on Tibri Road. Slow-simmered Punjabi
-            curries, charcoal-roasted tandoori specialties, artisanal coffees, and celebrations.
+            <span className="font-gurmukhi text-xs text-[#D6A84F]/90 block mt-1">ਚੰਗਾ ਖਾਣਾ • ਵਧੀਆ ਮਹਿਫ਼ਿਲ</span>
+            ਗੁਰਦਾਸਪੁਰ ਦਾ ਮਨਪਸੰਦ ਪਰਿਵਾਰਕ ਰੈਸਟੋਰੈਂਟ ਤੇ ਕੈਫੇ। Authentic Punjabi handi recipes, charcoal tandoori platters, artisanal coffees and unforgettable celebrations.
           </p>
         </div>
 
         {/* ── Visit & Contact ── */}
         <div>
-          <h4 className="text-[11px] font-mono font-bold tracking-[0.28em] uppercase text-[#dfb76c] mb-5">
+          <h4 className="text-[11px] font-mono font-bold tracking-[0.28em] uppercase text-[#D6A84F] mb-5">
             VISIT US
           </h4>
-          <address className="space-y-3 text-xs sm:text-sm leading-relaxed text-[#cfc5b6] not-italic font-light">
+          <address className="space-y-3 text-xs sm:text-sm leading-relaxed text-[#A9A59B] not-italic font-light">
             <p className="flex items-start gap-2.5">
-              <MapPin className="size-4 text-[#dfb76c] shrink-0 mt-0.5" />
+              <MapPin className="size-4 text-[#D6A84F] shrink-0 mt-0.5" />
               <span>{DAWAT_INFO.address}</span>
             </p>
             <p className="flex items-center gap-2.5 pt-1">
-              <Phone className="size-4 text-[#dfb76c] shrink-0" />
-              <a href={DAWAT_INFO.phoneHref} className="hover:text-[#dfb76c] transition font-mono">
+              <Phone className="size-4 text-[#D6A84F] shrink-0" />
+              <a href={DAWAT_INFO.phoneHref} className="hover:text-[#D6A84F] transition font-mono">
                 {DAWAT_INFO.phoneDisplay}
               </a>
             </p>
-            <p className="text-[#a89782] text-xs pl-6">
+            <p className="text-[#A9A59B] text-xs pl-6">
               Landline:{" "}
-              <a href={DAWAT_INFO.landlineHref} className="hover:text-[#dfb76c] transition font-mono">
+              <a href={DAWAT_INFO.landlineHref} className="hover:text-[#D6A84F] transition font-mono">
                 {DAWAT_INFO.landlineDisplay}
               </a>
             </p>
-            <p className="text-[#a89782] text-xs pl-6">Open Everyday: 10:00 AM – 11:00 PM</p>
+            <p className="text-[#A9A59B] text-xs pl-6">Open Everyday: 10:00 AM – 11:00 PM</p>
           </address>
         </div>
 
         {/* ── Quick Navigation ── */}
         <div>
-          <h4 className="text-[11px] font-mono font-bold tracking-[0.28em] uppercase text-[#dfb76c] mb-5">
+          <h4 className="text-[11px] font-mono font-bold tracking-[0.28em] uppercase text-[#D6A84F] mb-5">
             NAVIGATION
           </h4>
-          <ul className="space-y-2.5 text-xs sm:text-sm text-[#cfc5b6] font-light">
+          <ul className="space-y-2.5 text-xs sm:text-sm text-[#A9A59B] font-light">
             {quickLinks.map((l) => (
               <li key={l.label}>
-                <a href={l.href} className="transition-colors hover:text-[#dfb76c]">
+                <a href={l.href} className="transition-colors hover:text-[#D6A84F]">
                   {l.label}
                 </a>
               </li>
@@ -85,10 +88,10 @@ export function Footer() {
 
         {/* ── Social & Connect ── */}
         <div>
-          <h4 className="text-[11px] font-mono font-bold tracking-[0.28em] uppercase text-[#dfb76c] mb-5">
+          <h4 className="text-[11px] font-mono font-bold tracking-[0.28em] uppercase text-[#D6A84F] mb-5">
             CONNECT WITH US
           </h4>
-          <p className="text-xs text-[#bdae9c] leading-relaxed font-light mb-4">
+          <p className="text-xs text-[#A9A59B] leading-relaxed font-light mb-4">
             Connect via WhatsApp or visit our social channels for instant table reservations and
             special party bookings.
           </p>
@@ -131,10 +134,10 @@ export function Footer() {
       </div>
 
       {/* ── Bottom Bar ── */}
-      <div className="border-t border-[#dfb76c]/10 bg-black/60">
-        <div className="mx-auto flex max-w-[1400px] flex-col sm:flex-row items-center justify-between gap-3 px-5 py-6 text-xs text-[#8f8272] sm:px-8">
+      <div className="border-t border-[#D6A84F]/10 bg-[#0E1110]">
+        <div className="mx-auto flex max-w-[1400px] flex-col sm:flex-row items-center justify-between gap-3 px-5 py-6 text-xs text-[#A9A59B]/70 sm:px-8">
           <p>© {new Date().getFullYear()} Get To Gether Restaurant, Gurdaspur, Punjab. All rights reserved.</p>
-          <p className="flex items-center gap-1 text-[#8f8272]">
+          <p className="flex items-center gap-1 text-[#A9A59B]/70">
             Official Brand &bull; Good Food &bull; Great Company
           </p>
         </div>

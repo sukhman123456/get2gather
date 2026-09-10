@@ -63,7 +63,8 @@ export const REAL_PHOTOS = {
 
   // Real photos of Get To Gether Restaurant Gurdaspur
   gurdaspurCafeCeiling: "/uploads/gurdaspur-cafe-ceiling.jpg",
-  gurdaspurDiningCustomer: "/uploads/gurdaspur-dining-customer.jpg",
+  gurdaspurDiningCustomer: "/uploads/gtg-luxury-dining-lounge.jpg",
+  luxuryDiningLounge: "/uploads/gtg-luxury-dining-lounge.jpg",
   gurdaspurMandalaWall: "/uploads/gurdaspur-mandala-wall.jpg",
   gurdaspurBambooGarden: "/uploads/gurdaspur-bamboo-garden.jpg",
   mocktailDrink: "/uploads/gtg-mocktail-drink.jpg",
@@ -72,14 +73,20 @@ export const REAL_PHOTOS = {
   breakfastPoster: "/uploads/gtg-breakfast-poster.jpg",
   heroLuxuryAmbience: "/uploads/hero-luxury-ambience.jpg",
 
+  // Signature culinary & dining visuals
+  tandooriSizzler: "/uploads/gtg-tandoori-sizzler.jpg",
+  punjabiRoyalFeast: "/uploads/gtg-punjabi-royal-feast.jpg",
+  pizzaPastaFeast: "/uploads/gtg-pizza-pasta-feast.jpg",
+  vipReservation: "/uploads/gtg-vip-reservation.jpg",
+
   // Aliases for seamless component compatibility
   heroInterior: "/uploads/hero-luxury-ambience.jpg",
   interiorStoneWall: "/uploads/gurdaspur-mandala-wall.jpg",
   skyLoungeTerrace: "/uploads/gurdaspur-bamboo-garden.jpg",
-  reservedDiningHall: "/uploads/gurdaspur-dining-customer.jpg",
+  reservedDiningHall: "/uploads/gtg-vip-reservation.jpg",
   celebrationPartyHall: "/uploads/gtg-party-celebration.jpg",
-  mocktailTandooriTable: "/uploads/gtg-mocktail-drink.jpg",
-  punjabiSaagRotiDish: "/uploads/gtg-breakfast-poster.jpg",
+  mocktailTandooriTable: "/uploads/gtg-tandoori-sizzler.jpg",
+  punjabiSaagRotiDish: "/uploads/gtg-punjabi-royal-feast.jpg",
   barReceptionCounter: "/uploads/gurdaspur-cafe-ceiling.jpg",
   menuPosterBreakfast: "/uploads/gtg-breakfast-poster.jpg",
 
